@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
+import WebLayout from '@/Layouts/WebLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import Form from '@/Pages/Graphic/Form.vue';
 </script>
@@ -24,7 +24,7 @@ import Form from '@/Pages/Graphic/Form.vue';
             </div>
         </div>
     </AuthenticatedLayout>
-    <GuestLayout
+    <WebLayout
         v-else
     >
         <div class="py-12">
@@ -35,5 +35,5 @@ import Form from '@/Pages/Graphic/Form.vue';
                 </div>
             </div>
         </div>
-    </GuestLayout>
+    </WebLayout>
 </template>
