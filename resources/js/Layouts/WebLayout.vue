@@ -29,23 +29,23 @@ const showingNavigationDropdown = ref(false);
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink
+                                    :href="route('login')"
+                                    class="font-bold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                >
+                                    Iniciar Sesión
+                                </NavLink>
+
+                                <NavLink
+                                    :href="route('register')"
+                                    class="font-bold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                >
+                                    Registrar
+                                </NavLink>
                                 <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
                                     Graficación
                                 </NavLink>
                             </div>
-                        </div>
-                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-                            <Link
-                                :href="route('login')"
-                                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                >Iniciar Sesión</Link
-                            >
-
-                            <Link
-                                :href="route('register')"
-                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                >Registrar</Link
-                            >
                         </div>
 
                         <!-- Hamburger -->
@@ -87,6 +87,12 @@ const showingNavigationDropdown = ref(false);
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('login')" :active="route().current('login')">
+                            Iniciar Sesión
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('register')" :active="route().current('register')">
+                            Registrar
+                        </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
                             Graficación
                         </ResponsiveNavLink>
