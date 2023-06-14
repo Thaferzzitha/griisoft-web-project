@@ -14,7 +14,18 @@ class GraphicController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Graphic/Index', [
+            'status' => session('status'),
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function list()
+    {
+        $graphics = Graphic::where('user_id', auth()->user()->id)->get();
+        return response($graphics, 200);
     }
 
     /**

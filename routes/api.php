@@ -23,4 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/auth/logout', [AuthController::class, 'logout']);
+
+//Graphic Routes
+Route::middleware('auth:sanctum')->get('/graphic/list', [GraphicController::class, 'list']);
 Route::middleware('auth:sanctum')->apiResource('/graphic', GraphicController::class);

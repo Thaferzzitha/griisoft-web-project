@@ -32,6 +32,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
+                                    Graficación
+                                </NavLink>
                             </div>
                         </div>
 
@@ -115,6 +118,9 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
+                        <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
+                            Gráficos
+                        </NavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
