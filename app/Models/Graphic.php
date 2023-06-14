@@ -9,10 +9,10 @@ class Graphic extends Model
 {
     use HasFactory;
 
-    public const SPROTT = 1;
-    public const LORENZ = 2;
-    public const CHEN = 3;
-    public const ROSSLER = 4;
+    public const SPROTT = 'sprott';
+    public const LORENZ = 'lorenz';
+    public const CHEN = 'chen';
+    public const ROSSLER = 'rossler';
 
      /**
      * The attributes that are mass assignable.
@@ -34,7 +34,7 @@ class Graphic extends Model
     protected $casts = [
         'parameters' => 'array',
         'results' => 'array',
-        'type' => 'integer',
+        'type' => 'string',
     ];
 
     public function user()

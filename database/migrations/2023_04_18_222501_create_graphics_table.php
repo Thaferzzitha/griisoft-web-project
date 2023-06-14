@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->json('parameters');
             $table->json('results');
-            $table->integer('type');
+            $table->string('type');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });

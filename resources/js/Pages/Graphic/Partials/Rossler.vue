@@ -183,7 +183,7 @@ export default {
           y: this.y,
           z: this.z,
         },
-        type: 4
+        type: 'rossler'
       };
 
       const token = localStorage.getItem("access_token");
