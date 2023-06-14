@@ -36,6 +36,13 @@ const submit = async () => {
 </script>
 
 <template>
+    <div class="bg-gray-100 dark:bg-gray-900 top-0 right-0 p-6 text-right">
+        <Link
+                :href="route('register')"
+                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                >Registrar</Link
+            >
+    </div>
     <GuestLayout>
         <Head title="Log in" />
 
@@ -61,7 +68,7 @@ const submit = async () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="Contraseña" />
 
                 <TextInput
                     id="password"
@@ -78,7 +85,7 @@ const submit = async () => {
             <div class="block mt-4">
                 <label class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
+                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Recuerdame</span>
                 </label>
             </div>
 
@@ -88,11 +95,11 @@ const submit = async () => {
                     :href="route('password.request')"
                     class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                 >
-                    Forgot your password?
+                    ¿Olvidaste tu contraseña?
                 </Link>
 
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Log in
+                    Iniciar Sesión
                 </PrimaryButton>
             </div>
         </form>
