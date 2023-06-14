@@ -96,6 +96,8 @@
 import Plotly from "plotly.js-dist-min";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
+import Swal from 'sweetalert2'
+
 export default {
   components: { SecondaryButton, PrimaryButton },
   data() {
@@ -169,8 +171,48 @@ export default {
 
       this.loading = false;
     },
-    onSavePlot() {
-      window.alert("El gráfico se guardo con éxito");
+    async onSavePlot() {
+      const parameters = {
+        parameters: {
+          point_number: this.pointNumber,
+          step_size: this.stepSize,
+          a: this.a,
+          b: this.b,
+          c: this.c,
+          x: this.x,
+          y: this.y,
+          z: this.z,
+        },
+        type: 4
+      };
+
+      const token = localStorage.getItem("access_token");
+      
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      await axios.post("/api/graphic", parameters, config)
+        .then(() => {
+          Swal.fire({
+            title: 'Éxito',
+            text: 'El gráfico ha sido registrado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        })
+        .catch((error) => {
+          Swal.fire({
+            title: 'Error',
+            text: 'Se produjo un error en la operación',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        });
     },
   },
 };

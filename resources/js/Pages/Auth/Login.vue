@@ -6,6 +6,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import axios from 'axios';
 
 defineProps<{
     canResetPassword?: boolean;
@@ -18,7 +19,16 @@ const form = useForm({
     remember: false,
 });
 
-const submit = () => {
+const submit = async () => {
+    const response = await axios.post('/api/auth/login', {
+        email: form.email,
+        password: form.password
+    });
+    
+    const token = response.data.token;
+
+    localStorage.setItem('access_token', token);
+    
     form.post(route('login'), {
         onFinish: () => form.reset('password'),
     });
