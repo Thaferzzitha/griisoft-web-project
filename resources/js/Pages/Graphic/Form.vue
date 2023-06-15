@@ -3,10 +3,18 @@ import Rossler from "./Partials/Rossler.vue";
 import InputLabel from '@/Components/InputLabel.vue';
 export default {
   components: { Rossler, InputLabel },
+  props: {
+    atractor: {type: Object, default: null}
+  },
   data() {
     return {
-      atractor: "",
+      selectedAtractor: "",
     };
+  },
+  mounted() {
+      if (this.atractor) {
+        this.selectedAtractor = this.atractor.type;
+      }
   },
 };
 </script>
@@ -14,10 +22,11 @@ export default {
 <template>
   <div class="mb-10">
     <select
-      v-model="atractor"
+      v-model="selectedAtractor"
       name="atractor"
       id="atractor"
       class="block w-11/12 mx-auto my-10 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+      :disabled="atractor"
     >
       <option value="" disabled selected hidden>Seleccione el atractor...</option>
       <option value="rossler">Atractor de Rossler</option>
@@ -29,7 +38,7 @@ export default {
     <div
       class="p-5 card-height w-11/12 mx-auto bg-white dark:bg-gray-500 shadow-md rounded-lg overflow-hidden"
     >
-      <Rossler v-if="atractor == 'rossler'"></Rossler>
+      <Rossler v-if="selectedAtractor == 'rossler'" :atractor="atractor"></Rossler>
       <!-- <Lorenz v-if="atractor == 'lorenz'">
         </Lorenz>
         <Chen v-if="atractor == 'chen'">

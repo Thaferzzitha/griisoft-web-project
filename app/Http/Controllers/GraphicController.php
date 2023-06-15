@@ -32,18 +32,23 @@ class GraphicController extends Controller
             Graphic::CHEN,
             Graphic::LORENZ,
         ];
-        
-        $type = request('type');
 
+        $type = request('type');
+        $title = request('title');
+        
         $query = Graphic::where('user_id', auth()->user()->id);
 
-        if ($type) {
+        if ($type && !empty($type)) {
             $isAllowedType = in_array($type, $allowedGraphicTypes);
             if ($isAllowedType) {
                 $query->where('type', $type);
             } else {
                 return response()->json(['error' => 'Tipo de gráfico no válido, los tipos válidos son: rossler, sprott, chen y lorenz'], Response::HTTP_BAD_REQUEST);
             }
+        }
+
+        if ($title && !empty($title)) {
+            $query->where('title', 'like', '%'.$title.'%');
         }
 
         $graphics = $query->get();
@@ -67,13 +72,15 @@ class GraphicController extends Controller
     public function store(Request $request)
     {
         try {
-            $validateGraphic = Validator::make($request->all(), 
-            [
-                'parameters' => 'required|array',
-                'title' => 'required|string',
-            ]);
+            $validateGraphic = Validator::make(
+                $request->all(),
+                [
+                    'parameters' => 'required|array',
+                    'title' => 'required|string',
+                ]
+            );
 
-            if($validateGraphic->fails()){
+            if ($validateGraphic->fails()) {
                 return response()->json([
                     'status' => false,
                     'message' => 'validation error',
@@ -94,7 +101,6 @@ class GraphicController extends Controller
                 'status' => true,
                 'message' => 'Graphic created successfully'
             ], 200);
-
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => false,
@@ -126,16 +132,51 @@ class GraphicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Graphic $graphic)
     {
-        //
+        try {
+            $validateGraphic = Validator::make(
+                $request->all(),
+                [
+                    'parameters' => 'required|array',
+                    'title' => 'required|string',
+                ]
+            );
+
+            if ($validateGraphic->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'validation error',
+                    'errors' => $validateGraphic->errors()
+                ], 401);
+            }
+
+            $graphic->update([
+                'title' => $request->title,
+                'parameters' => $request->parameters,
+                'results' => [],
+                'type' => $request->type,
+            ]);
+
+            return response()->json([
+                'data' => $graphic,
+                'status' => true,
+                'message' => 'Graphic updated successfully'
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()
+            ], 500);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Graphic $graphic)
     {
-        //
+        $graphic->delete();
+        return response('', 200);
     }
 }

@@ -2,16 +2,36 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import Modal from '@/Components/Modal.vue';
 import Rossler from "./Partials/Rossler.vue";
+import Swal from 'sweetalert2';
 
 defineProps<{
     status?: string;
 }>();
 
-const fetchData = async () => {
+const items = ref({});
+const atractorData = ref({});
+const showAtractor = ref(false);
+const loading = ref(false);
+const selectedtype = ref('');
+const typedTitle = ref('');
+
+onMounted(async () => {
+    await fetchData();
+});
+
+watch(selectedtype, async (newValue, oldValue) => {
+    await fetchData(newValue, typedTitle.value);
+});
+watch(typedTitle, async (newValue, oldValue) => {
+    await fetchData(selectedtype.value, newValue);
+});
+
+const fetchData = async (type = '', title = '') => {
+    loading.value = true;
     try {
         const token = localStorage.getItem("access_token");
 
@@ -21,40 +41,85 @@ const fetchData = async () => {
             },
         };
 
-        const response = await axios.get('/api/graphic/list', config);
+        let url = `/api/graphic/list?type=${type}`;
 
-        return response.data;
+        if (title.length !== 0) {
+            url = `${url}&title=${title}`;
+        }
+
+        const response = await axios.get(url, config);
+        items.value = response.data;
     } catch (error) {
-        console.error(error);
-        return [];
+        Swal.fire({
+            title: 'Error',
+            text: 'Se produjo un error en la operación ' + error,
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
+    loading.value = false;
 };
-
-const items = ref({});
-const atractorData = ref({});
-const showAtractor = ref(false);
-
-
-onMounted(async () => {
-    items.value = await fetchData(); // Almacenar los datos devueltos en la variable
-});
 
 const formatDate = (date) => {
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric' };
     return new Date(date).toLocaleDateString('es-ES', options);
 };
 
-const redirectToCreate = () => {
-    window.location.href = route('graphic.create');
+const redirect = (action, id) => {
+    if (action == 'edit') {
+        window.location.href = route('graphic.edit', id);
+    }
 };
 
 const showAtractorModal = (item) => {
-    showAtractor.value = true;
     atractorData.value = item;
+    showAtractor.value = true;
 };
 
 const closeModal = () => {
     showAtractor.value = false;
+};
+
+const onDelete = (id) => {
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: 'Esta acción eliminará el gráfico permanentemente.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const token = localStorage.getItem("access_token");
+
+            const config = {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            };
+            axios.delete(`/api/graphic/${id}`, config)
+                .then(() => {
+                    Swal.fire({
+                        title: 'Registro eliminado',
+                        text: 'El registro se ha eliminado exitosamente.',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    fetchData();
+                })
+                .catch((error) => {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Se produjo un error en la operación ' + error.response.data.errors.title,
+                        icon: 'error',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                });
+        }
+    });
 };
 </script>
 
@@ -69,6 +134,26 @@ const closeModal = () => {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="relative overflow-x-auto">
+                        <!-- Type filter -->
+                        <div class="my-5">
+                            <label for="type" class="block w-11/12 mx-auto mb-1 dark:text-gray-300">Filtro por tipo</label>
+                            <select v-model="selectedtype" name="type" id="type"
+                                class="block w-11/12 mx-auto text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option value="" selected>Todos los atractores...</option>
+                                <option value="rossler">Atractor de Rossler</option>
+                                <option value="lorenz">Atractor de Lorenz</option>
+                                <option value="chen">Atractor de Chen</option>
+                                <option value="sprott">Atractor de Sprott</option>
+                            </select>
+                        </div>
+                        <!-- Title Filter -->
+                        <div class="my-5 ">
+                            <label for="type" class="block w-11/12 mx-auto mb-1 dark:text-gray-300">Filtro por
+                                título</label>
+                            <input v-model="typedTitle" type="text" id="title"
+                                class="block w-11/12 mx-auto border-gray-300 border rounded-md p-2 mb-1" />
+                        </div>
+                        <!-- Data Table -->
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
@@ -76,47 +161,64 @@ const closeModal = () => {
                                         Título
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Fecha de Creación
+                                        Tipo
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        Tipo
+                                        Fecha de Última Modificación
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Acciones
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody v-if="!loading">
                                 <tr v-for="item in items" :key="item.id"
                                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <th scope="row"
                                         class="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ item.title }}
                                     </th>
-                                    <th scope="row" class="px-6 py-4 capitalize">
-                                        {{ formatDate(item.created_at) }}
-                                    </th>
                                     <td class="px-6 py-4 capitalize">
                                         {{ item.type }}
                                     </td>
+                                    <th scope="row" class="px-6 py-4 capitalize">
+                                        {{ formatDate(item.updated_at) }}
+                                    </th>
                                     <td class="px-6 py-4">
                                         <button
-                                            class="mr-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                                            class="my-5 mr-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                                             @click="showAtractorModal(item)">
                                             Ver
                                         </button>
                                         <button
-                                            class="mr-5 bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded">
+                                            class="my-5 mr-5 bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded"
+                                            @click="redirect('edit', item.id)">
                                             Editar
                                         </button>
                                         <button
-                                            class="bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+                                            class="my-5 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+                                            @click="onDelete(item.id)">
                                             Eliminar
                                         </button>
                                     </td>
                                 </tr>
                             </tbody>
+                            <tbody v-if="!loading && !items.length">
+                                <tr>
+                                    <th colspan="4" class="text-center p-5 dark:text-white">
+                                        No existen gráficos.
+                                    </th>
+                                </tr>
+                            </tbody>
+                            <tbody v-if="loading">
+                                <tr>
+                                    <th colspan="4" class="text-center p-5 dark:text-white">
+                                        Cargando...
+                                    </th>
+                                </tr>
+                            </tbody>
                         </table>
+                        <!-- Show Graphic Modal -->
                         <Modal :show="showAtractor" @close="closeModal">
                             <div class="p-6">
                                 <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">

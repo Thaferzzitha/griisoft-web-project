@@ -74,10 +74,10 @@
       </PrimaryButton>
     </div>
     <!-- Rossler Atractor Plots -->
-    <div v-if="!loading && plotView == 'view3d'" ref="plotContainer3d"  class="mx-auto max-h-full max-w-md"></div>
-    <div v-if="!loading && plotView == 'viewxz'" ref="plotContainerXZ"  class="mx-auto max-h-full max-w-md"></div>
-    <div v-if="!loading && plotView == 'viewxy'" ref="plotContainerXY"  class="mx-auto max-h-full max-w-md"></div>
-    <div v-if="!loading && plotView == 'viewyz'" ref="plotContainerYZ"  class="mx-auto max-h-full max-w-md"></div>
+    <div v-if="!loading && plotView == 'view3d'" ref="plotContainer3d" class="mx-auto max-h-full max-w-md"></div>
+    <div v-if="!loading && plotView == 'viewxz'" ref="plotContainerXZ" class="mx-auto max-h-full max-w-md"></div>
+    <div v-if="!loading && plotView == 'viewxy'" ref="plotContainerXY" class="mx-auto max-h-full max-w-md"></div>
+    <div v-if="!loading && plotView == 'viewyz'" ref="plotContainerYZ" class="mx-auto max-h-full max-w-md"></div>
     <!-- Loading label -->
     <div v-if="loading" class="mx-auto dark:text-white">Cargando...</div>
   </div>
@@ -87,7 +87,7 @@
 import Plotly from "plotly.js-dist-min";
 import SecondaryButton from "@/Components/SecondaryButton.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 export default {
   components: { SecondaryButton, PrimaryButton },
@@ -229,10 +229,10 @@ export default {
         };
 
         const layoutYZ = {
-          margin: { l: 0, r: 0, b: 0, t: 40 }, 
+          margin: { l: 0, r: 0, b: 0, t: 40 },
           xaxis: { title: "Y" },
           yaxis: { title: "Z" },
-          title: this.title, 
+          title: this.title,
         };
 
         const dataYZ = [traceYZ];
@@ -265,25 +265,49 @@ export default {
         },
       };
 
-      await axios.post("/api/graphic", parameters, config)
-        .then(() => {
-          Swal.fire({
-            title: 'Éxito',
-            text: 'El gráfico ha sido registrado',
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 1500
+      if (!this.atractor) {
+        await axios.post("/api/graphic", parameters, config)
+          .then(() => {
+            Swal.fire({
+              title: 'Éxito',
+              text: 'El gráfico ha sido registrado',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500
+            })
           })
-        })
-        .catch((error) => {
-          Swal.fire({
-            title: 'Error',
-            text: 'Se produjo un error en la operación '+ error.response.data.errors.title,
-            icon: 'error',
-            showConfirmButton: false,
-            timer: 1500
+          .catch((error) => {
+            Swal.fire({
+              title: 'Error',
+              text: 'Se produjo un error en la operación ' + error.response.data.errors.title,
+              icon: 'error',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          });
+      } else {
+        const graphId = this.atractor.id;
+        await axios.put(`/api/graphic/${graphId}`, parameters, config)
+          .then(() => {
+            Swal.fire({
+              title: 'Éxito',
+              text: 'El gráfico ha sido actualizado',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500
+            })
           })
-        });
+          .catch((error) => {
+            Swal.fire({
+              title: 'Error',
+              text: 'Se produjo un error en la operación ' + error.response.data.errors.title,
+              icon: 'error',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          });
+      }
+
     },
   },
 };
