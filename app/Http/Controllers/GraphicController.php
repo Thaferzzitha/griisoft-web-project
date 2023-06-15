@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Graphic;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
@@ -24,7 +26,28 @@ class GraphicController extends Controller
      */
     public function list()
     {
-        $graphics = Graphic::where('user_id', auth()->user()->id)->get();
+        $allowedGraphicTypes = [
+            Graphic::ROSSLER,
+            Graphic::SPROTT,
+            Graphic::CHEN,
+            Graphic::LORENZ,
+        ];
+        
+        $type = request('type');
+
+        $query = Graphic::where('user_id', auth()->user()->id);
+
+        if ($type) {
+            $isAllowedType = in_array($type, $allowedGraphicTypes);
+            if ($isAllowedType) {
+                $query->where('type', $type);
+            } else {
+                return response()->json(['error' => 'Tipo de gráfico no válido, los tipos válidos son: rossler, sprott, chen y lorenz'], Response::HTTP_BAD_REQUEST);
+            }
+        }
+
+        $graphics = $query->get();
+
         return response($graphics, 200);
     }
 
@@ -95,7 +118,9 @@ class GraphicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return Inertia::render('Graphic/Edit', [
+            'status' => session('status'),
+        ]);
     }
 
     /**

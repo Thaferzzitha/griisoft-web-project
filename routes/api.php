@@ -26,4 +26,5 @@ Route::middleware('auth:sanctum')->post('/auth/logout', [AuthController::class, 
 
 //Graphic Routes
 Route::middleware('auth:sanctum')->get('/graphic/list', [GraphicController::class, 'list']);
+Route::middleware('auth:sanctum')->get('/graphic/{graphic}', [GraphicController::class, 'show']);
 Route::middleware('auth:sanctum')->apiResource('/graphic', GraphicController::class);
