@@ -47,6 +47,7 @@ class GraphicController extends Controller
             $validateGraphic = Validator::make($request->all(), 
             [
                 'parameters' => 'required|array',
+                'title' => 'required|string',
             ]);
 
             if($validateGraphic->fails()){
@@ -59,6 +60,7 @@ class GraphicController extends Controller
 
             $graphic = Graphic::create([
                 'user_id' => auth()->user()->id,
+                'title' => $request->title,
                 'parameters' => $request->parameters,
                 'results' => [],
                 'type' => $request->type,

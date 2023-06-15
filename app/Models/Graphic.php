@@ -21,6 +21,7 @@ class Graphic extends Model
      */
     protected $fillable = [
         'user_id',
+        'title',
         'parameters',
         'results',
         'type',

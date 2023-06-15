@@ -20,9 +20,9 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link href="/">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
+                                        class="block h-14 w-auto fill-current text-gray-800 dark:text-gray-200"
                                     />
                                 </Link>
                             </div>
@@ -32,8 +32,11 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('graphic.index')" :active="route().current('graphic.index')">
+                                    Historial de Gráficos
+                                </NavLink>
                                 <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
-                                    Graficación
+                                    Graficar Atractor
                                 </NavLink>
                             </div>
                         </div>
@@ -118,9 +121,12 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
-                        <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
-                            Gráficos
-                        </NavLink>
+                        <ResponsiveNavLink :href="route('graphic.index')" :active="route().current('graphic.index')">
+                            Historial de Gráficos
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
+                            Graficar Atractor
+                        </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->

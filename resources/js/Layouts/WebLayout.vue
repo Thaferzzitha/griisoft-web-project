@@ -22,7 +22,7 @@ const showingNavigationDropdown = ref(false);
                             <div class="shrink-0 flex items-center">
                                 <Link :href="'/'">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
+                                        class="block h-14 w-auto fill-current text-gray-800 dark:text-gray-200"
                                     />
                                 </Link>
                             </div>
@@ -43,7 +43,7 @@ const showingNavigationDropdown = ref(false);
                                     Registrar
                                 </NavLink>
                                 <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
-                                    Graficación
+                                    Gráficar Atractor
                                 </NavLink>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const showingNavigationDropdown = ref(false);
                             Registrar
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
-                            Graficación
+                            Gráficar Atractor
                         </ResponsiveNavLink>
                     </div>
                 </div>
