@@ -12,7 +12,7 @@ import Form from '@/Pages/Graphic/Form.vue';
         v-if="$page.props.auth.user"
     >
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Graficación: Crear Gráfico</h2>
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Graficación: Dibujar Atractor</h2>
         </template>
 
         <div class="py-12">
