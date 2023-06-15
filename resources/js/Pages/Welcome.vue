@@ -52,7 +52,7 @@ defineProps<{
                     <p class="dark:text-gray-300 text-lg text-center mb-8">Los atractores caóticos son sistemas dinámicos no lineales que exhiben comportamientos altamente sensibles a las condiciones iniciales. Descubre la belleza y complejidad de estos atractores mediante nuestra herramienta de graficación.</p>
 
                     <div class="flex justify-center mb-6">
-                        <a href="/graphic/create" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Dibuja un atractor!</a>
+                        <a href="/graphic/create" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Grafica un atractor!</a>
                     </div>
                 </div>
             </div>
