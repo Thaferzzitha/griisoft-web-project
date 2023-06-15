@@ -17,7 +17,7 @@ export default {
       v-model="atractor"
       name="atractor"
       id="atractor"
-      class="block w-11/12 mx-auto my-10 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+      class="block w-11/12 mx-auto my-10 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
     >
       <option value="" disabled selected hidden>Seleccione el atractor...</option>
       <option value="rossler">Atractor de Rossler</option>
@@ -27,7 +27,7 @@ export default {
     </select>
 
     <div
-      class="p-5 card-height w-11/12 mx-auto bg-white shadow-md rounded-lg overflow-hidden"
+      class="p-5 card-height w-11/12 mx-auto bg-white dark:bg-gray-500 shadow-md rounded-lg overflow-hidden"
     >
       <Rossler v-if="atractor == 'rossler'"></Rossler>
       <!-- <Lorenz v-if="atractor == 'lorenz'">
