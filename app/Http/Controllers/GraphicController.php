@@ -51,7 +51,7 @@ class GraphicController extends Controller
             $query->where('title', 'like', '%'.$title.'%');
         }
 
-        $graphics = $query->get();
+        $graphics = $query->orderBy('updated_at', 'desc')->get();
 
         return response($graphics, 200);
     }
