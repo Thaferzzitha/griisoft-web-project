@@ -1,8 +1,9 @@
 <script lang="ts">
 import Rossler from "./Partials/Rossler.vue";
+import  Lorenz from "./Partials/Lorenz.vue";
 import InputLabel from '@/Components/InputLabel.vue';
 export default {
-  components: { Rossler, InputLabel },
+  components: { Rossler, Lorenz, InputLabel },
   props: {
     atractor: {type: Object, default: null}
   },
@@ -39,9 +40,8 @@ export default {
       class="p-5 card-height w-11/12 mx-auto bg-white dark:bg-gray-500 shadow-md rounded-lg overflow-hidden"
     >
       <Rossler v-if="selectedAtractor == 'rossler'" :atractor="atractor"></Rossler>
-      <!-- <Lorenz v-if="atractor == 'lorenz'">
-        </Lorenz>
-        <Chen v-if="atractor == 'chen'">
+      <Lorenz v-if="selectedAtractor == 'lorenz'" :atractor="atractor"></Lorenz>
+       <!-- <Chen v-if="atractor == 'chen'">
         </Chen>
         <Sprott v-if="atractor == 'sprott'">
         </Sprott> -->   

@@ -6,6 +6,7 @@ import { onMounted, ref, watch } from 'vue';
 import SecondaryButton from '@/Components/SecondaryButton.vue';
 import Modal from '@/Components/Modal.vue';
 import Rossler from "./Partials/Rossler.vue";
+import Lorenz from "./Partials/Lorenz.vue";
 import Swal from 'sweetalert2';
 
 defineProps<{
@@ -225,7 +226,8 @@ const onDelete = (id) => {
                                     Atractor de {{ atractorData.type }} creando el {{ formatDate(atractorData.created_at) }}
                                 </h2>
 
-                                <Rossler :is-read-only="true" :atractor="atractorData"></Rossler>
+                                <Rossler  v-if="atractorData.type == 'rossler'" :is-read-only="true" :atractor="atractorData"></Rossler>
+                                <Lorenz  v-if="atractorData.type == 'lorenz'" :is-read-only="true" :atractor="atractorData"></Lorenz>
 
                                 <div class="mt-6 flex justify-end">
                                     <SecondaryButton @click="closeModal"> Cerrar </SecondaryButton>
