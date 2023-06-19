@@ -7,6 +7,8 @@ import SecondaryButton from '@/Components/SecondaryButton.vue';
 import Modal from '@/Components/Modal.vue';
 import Rossler from "./Partials/Rossler.vue";
 import Lorenz from "./Partials/Lorenz.vue";
+import Chen from "./Partials/Chen.vue";
+import Sprott from "./Partials/Sprott.vue";
 import Swal from 'sweetalert2';
 
 defineProps<{
@@ -228,6 +230,8 @@ const onDelete = (id) => {
 
                                 <Rossler  v-if="atractorData.type == 'rossler'" :is-read-only="true" :atractor="atractorData"></Rossler>
                                 <Lorenz  v-if="atractorData.type == 'lorenz'" :is-read-only="true" :atractor="atractorData"></Lorenz>
+                                <Chen  v-if="atractorData.type == 'chen'" :is-read-only="true" :atractor="atractorData"></Chen>
+                                <Sprott  v-if="atractorData.type == 'sprott'" :is-read-only="true" :atractor="atractorData"></Sprott>
 
                                 <div class="mt-6 flex justify-end">
                                     <SecondaryButton @click="closeModal"> Cerrar </SecondaryButton>

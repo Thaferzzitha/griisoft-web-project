@@ -1,9 +1,12 @@
 <script lang="ts">
 import Rossler from "./Partials/Rossler.vue";
-import  Lorenz from "./Partials/Lorenz.vue";
+import Lorenz from "./Partials/Lorenz.vue";
+import Chen from "./Partials/Chen.vue"; 
+import Sprott from "./Partials/Sprott.vue"; 
 import InputLabel from '@/Components/InputLabel.vue';
+
 export default {
-  components: { Rossler, Lorenz, InputLabel },
+  components: { Rossler, Lorenz, Chen, Sprott, InputLabel },
   props: {
     atractor: {type: Object, default: null}
   },
@@ -41,10 +44,8 @@ export default {
     >
       <Rossler v-if="selectedAtractor == 'rossler'" :atractor="atractor"></Rossler>
       <Lorenz v-if="selectedAtractor == 'lorenz'" :atractor="atractor"></Lorenz>
-       <!-- <Chen v-if="atractor == 'chen'">
-        </Chen>
-        <Sprott v-if="atractor == 'sprott'">
-        </Sprott> -->   
+      <Chen v-if="selectedAtractor == 'chen'" :atractor="atractor"></Chen>
+      <Sprott v-if="selectedAtractor == 'sprott'" :atractor="atractor"></Sprott>   
         
     </div>
   </div>
