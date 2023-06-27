@@ -68,9 +68,9 @@ defineProps<{
 
                 <div class="w-full md:w-1/2">
                     <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 md:ml-2">
-                        <h2 class="dark:text-white text-2xl font-bold mb-4">Manual de Usuario</h2>
-                        <p class="dark:text-gray-300 mb-4">Descarga nuestro manual de usuario para obtener instrucciones detalladas sobre cómo utilizar nuestro sistema de graficación.</p>
-                        <a href="/user/manual" class="text-blue-500 hover:underline">Descargar manual</a>
+                        <h2 class="dark:text-white text-2xl font-bold mb-4">GrIISoft</h2>
+                        <p class="dark:text-gray-300 mb-4"> GrIISoft  es el Grupo de Investigación en Ingeniería de Software de la Facultad de Informática y Electrónica de la ESPOCH.</p>
+                        <a href="/griisoft" class="text-blue-500 hover:underline">Conoce mas aquí</a>
                     </div>
                 </div>
             </div>

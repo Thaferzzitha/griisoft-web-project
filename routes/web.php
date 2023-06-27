@@ -26,6 +26,15 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/griisoft', function () {
+    return Inertia::render('Griisoft', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
