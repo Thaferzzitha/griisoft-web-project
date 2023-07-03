@@ -38,6 +38,9 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
                                     Graficar Atractor
                                 </NavLink>
+                                <NavLink v-if="$page.props.auth.user.is_super_admin" :href="route('user.index')" :active="route().current('user.index')">
+                                    Usuarios
+                                </NavLink>
                             </div>
                         </div>
 
@@ -126,6 +129,9 @@ const showingNavigationDropdown = ref(false);
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('graphic.create')" :active="route().current('graphic.create')">
                             Graficar Atractor
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink v-if="$page.props.auth.user.is_super_admin" :href="route('user.index')" :active="route().current('user.index')">
+                            Usuarios
                         </ResponsiveNavLink>
                     </div>
 

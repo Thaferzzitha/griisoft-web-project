@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GraphicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,5 @@ Route::middleware('auth:sanctum')->post('/auth/logout', [AuthController::class, 
 Route::middleware('auth:sanctum')->get('/graphic/list', [GraphicController::class, 'list']);
 Route::middleware('auth:sanctum')->get('/graphic/{graphic}', [GraphicController::class, 'show']);
 Route::middleware('auth:sanctum')->apiResource('/graphic', GraphicController::class);
+Route::middleware('auth:sanctum')->get('/user/{user}/make-admin', [UserController::class, 'makeSuperAdmin']);
+Route::middleware('auth:sanctum')->get('/user/{user}/remove-admin', [UserController::class, 'removeSuperAdmin']);
