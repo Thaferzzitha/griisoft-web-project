@@ -97,4 +97,13 @@ class UserController extends Controller
 
         return response('', 200); 
     }
+
+    /**
+     * List all users
+     */
+    public function listAllUsers()
+    {
+        $users = User::all(['id', 'name']);
+        return response($users, 200); 
+    }
 }

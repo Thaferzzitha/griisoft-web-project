@@ -31,3 +31,4 @@ Route::middleware('auth:sanctum')->get('/graphic/{graphic}', [GraphicController:
 Route::middleware('auth:sanctum')->apiResource('/graphic', GraphicController::class);
 Route::middleware('auth:sanctum')->get('/user/{user}/make-admin', [UserController::class, 'makeSuperAdmin']);
 Route::middleware('auth:sanctum')->get('/user/{user}/remove-admin', [UserController::class, 'removeSuperAdmin']);
+Route::middleware('auth:sanctum')->get('/user/list-users', [UserController::class, 'listAllUsers']);

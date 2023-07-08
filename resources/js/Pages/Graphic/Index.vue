@@ -16,24 +16,35 @@ defineProps<{
 }>();
 
 const items = ref({});
+const usersList = ref([]);
 const atractorData = ref({});
 const showAtractor = ref(false);
 const loading = ref(false);
-const selectedtype = ref('');
+const selectedType = ref('');
 const typedTitle = ref('');
+const selectedUser = ref('');
 
 onMounted(async () => {
-    await fetchData();
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.get('user_id')) {
+        selectedUser.value = urlParams.get('user_id');
+    }
+    await fetchUsersList();
+    await fetchData('','',selectedUser.value);
 });
 
-watch(selectedtype, async (newValue, oldValue) => {
+watch(selectedUser, async (newValue, oldValue) => {
+    await fetchData(selectedType.value, typedTitle.value, newValue);
+});
+watch(selectedType, async (newValue, oldValue) => {
     await fetchData(newValue, typedTitle.value);
 });
 watch(typedTitle, async (newValue, oldValue) => {
-    await fetchData(selectedtype.value, newValue);
+    await fetchData(selectedType.value, newValue);
 });
 
-const fetchData = async (type = '', title = '') => {
+const fetchData = async (type = '', title = '', userId = '') => {
     loading.value = true;
     try {
         const token = localStorage.getItem("access_token");
@@ -50,8 +61,43 @@ const fetchData = async (type = '', title = '') => {
             url = `${url}&title=${title}`;
         }
 
+        if (userId.length !== 0) {
+            url = `${url}&user_id=${userId}`;
+        }
+
         const response = await axios.get(url, config);
         items.value = response.data;
+    } catch (error) {
+        Swal.fire({
+            title: 'Error',
+            text: 'Se produjo un error en la operación ' + error,
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+    loading.value = false;
+};
+
+const fetchUsersList = async () => {
+    loading.value = true;
+    try {
+        const token = localStorage.getItem("access_token");
+
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        };
+
+        const response = await axios.get('/api/user/list-users', config);
+        response.data.forEach(item => {
+            const newUser = {
+                value: item.id,
+                text: item.name
+            };
+            usersList.value.push(newUser);  
+        });
     } catch (error) {
         Swal.fire({
             title: 'Error',
@@ -137,10 +183,19 @@ const onDelete = (id) => {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="relative overflow-x-auto">
+                        <!-- User filter -->
+                        <div v-if="$page.props.auth.user.is_super_admin" class="my-5">
+                            <label for="type" class="block w-11/12 mx-auto mb-1 dark:text-gray-300">Filtro por usuario</label>
+                            <select v-model="selectedUser" name="user" id="user"
+                                class="block w-11/12 mx-auto text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option v-for="user in usersList" :value="user.value" :key="user.value">{{ user.text }}
+                                </option>
+                            </select>
+                        </div>
                         <!-- Type filter -->
                         <div class="my-5">
                             <label for="type" class="block w-11/12 mx-auto mb-1 dark:text-gray-300">Filtro por tipo</label>
-                            <select v-model="selectedtype" name="type" id="type"
+                            <select v-model="selectedType" name="type" id="type"
                                 class="block w-11/12 mx-auto text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                                 <option value="" selected>Todos los atractores...</option>
                                 <option value="rossler">Atractor de Rossler</option>
@@ -228,10 +283,14 @@ const onDelete = (id) => {
                                     Atractor de {{ atractorData.type }} creando el {{ formatDate(atractorData.created_at) }}
                                 </h2>
 
-                                <Rossler  v-if="atractorData.type == 'rossler'" :is-read-only="true" :atractor="atractorData"></Rossler>
-                                <Lorenz  v-if="atractorData.type == 'lorenz'" :is-read-only="true" :atractor="atractorData"></Lorenz>
-                                <Chen  v-if="atractorData.type == 'chen'" :is-read-only="true" :atractor="atractorData"></Chen>
-                                <Sprott  v-if="atractorData.type == 'sprott'" :is-read-only="true" :atractor="atractorData"></Sprott>
+                                <Rossler v-if="atractorData.type == 'rossler'" :is-read-only="true"
+                                    :atractor="atractorData"></Rossler>
+                                <Lorenz v-if="atractorData.type == 'lorenz'" :is-read-only="true" :atractor="atractorData">
+                                </Lorenz>
+                                <Chen v-if="atractorData.type == 'chen'" :is-read-only="true" :atractor="atractorData">
+                                </Chen>
+                                <Sprott v-if="atractorData.type == 'sprott'" :is-read-only="true" :atractor="atractorData">
+                                </Sprott>
 
                                 <div class="mt-6 flex justify-end">
                                     <SecondaryButton @click="closeModal"> Cerrar </SecondaryButton>
@@ -240,7 +299,6 @@ const onDelete = (id) => {
                         </Modal>
                     </div>
                 </div>
-            </div>
         </div>
-    </AuthenticatedLayout>
-</template>
+    </div>
+</AuthenticatedLayout></template>

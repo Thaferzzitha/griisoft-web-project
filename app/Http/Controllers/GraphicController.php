@@ -26,6 +26,8 @@ class GraphicController extends Controller
      */
     public function list()
     {
+        $this->middleware(RoleMiddleware::class.':super_admin');
+
         $allowedGraphicTypes = [
             Graphic::ROSSLER,
             Graphic::SPROTT,
@@ -35,8 +37,13 @@ class GraphicController extends Controller
 
         $type = request('type');
         $title = request('title');
+        $userId = request('user_id');
         
-        $query = Graphic::where('user_id', auth()->user()->id);
+        if ($userId && !empty($userId)) {
+            $query = Graphic::where('user_id', $userId);
+        } else {
+            $query = Graphic::where('user_id', auth()->user()->id);
+        }
 
         if ($type && !empty($type)) {
             $isAllowedType = in_array($type, $allowedGraphicTypes);
