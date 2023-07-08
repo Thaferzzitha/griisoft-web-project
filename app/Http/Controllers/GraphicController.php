@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Graphic;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -11,6 +12,43 @@ use Inertia\Inertia;
 
 class GraphicController extends Controller
 {
+
+    /**
+     * Display stadistics about graphics
+     */
+    public function stadistics()
+    {      
+        $userId = request('user_id');
+        $startDate = request('start_date', Carbon::now()->startOfMonth());
+        $endDate = request('end_date', Carbon::now()->endOfMonth());
+        $query = Graphic::query();
+        
+        if (auth()->user()->is_super_admin) {
+            if ($userId && !empty($userId)) {
+                $query = Graphic::where('user_id', $userId);
+            }
+        } else {
+            $query = Graphic::where('user_id', auth()->user()->id);
+        }
+
+        $graphics = $query->whereBetween('updated_at', [$startDate, $endDate])->get();
+
+        $graphicsStats = [
+            'sprott' => 0,
+            'lorenz' => 0,
+            'chen' => 0,
+            'rossler' => 0,
+            'start_date' => $startDate,
+            'end_date' => $endDate
+        ];
+
+        foreach ($graphics as $graphic) {
+            $graphicsStats[$graphic->type] = $graphicsStats[$graphic->type] + 1;
+        }
+        
+        return response($graphicsStats, 200);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -26,8 +64,6 @@ class GraphicController extends Controller
      */
     public function list()
     {
-        $this->middleware(RoleMiddleware::class.':super_admin');
-
         $allowedGraphicTypes = [
             Graphic::ROSSLER,
             Graphic::SPROTT,
@@ -39,7 +75,7 @@ class GraphicController extends Controller
         $title = request('title');
         $userId = request('user_id');
         
-        if ($userId && !empty($userId)) {
+        if ($userId && !empty($userId) && auth()->user()->is_super_admin) {
             $query = Graphic::where('user_id', $userId);
         } else {
             $query = Graphic::where('user_id', auth()->user()->id);
