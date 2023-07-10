@@ -7,6 +7,8 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
@@ -140,6 +142,7 @@ class GraphicController extends Controller
     {
         return Inertia::render('Graphic/Create', [
             'status' => session('status'),
+            'canLogin' => !Auth::check(),
         ]);
     }
 

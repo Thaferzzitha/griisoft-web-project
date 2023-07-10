@@ -3,6 +3,23 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import WebLayout from '@/Layouts/WebLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import Form from '@/Pages/Graphic/Form.vue';
+import Swal from "sweetalert2";
+import { onMounted } from 'vue';
+
+const props = defineProps<{
+  canLogin?: boolean;
+}>();
+
+onMounted( () => {
+    if (props.canLogin) {
+        Swal.fire({
+            title: "Recuerda",
+            text: "Para poder gestionar tus gráficos debes registrarte",
+            icon: "info",
+            showConfirmButton: true,
+        });
+    }
+});
 </script>
 
 <template>
