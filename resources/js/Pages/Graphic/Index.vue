@@ -11,8 +11,9 @@ import Chen from "./Partials/Chen.vue";
 import Sprott from "./Partials/Sprott.vue";
 import Swal from 'sweetalert2';
 
-defineProps<{
-    status?: string;
+const props = defineProps<{
+  status?: string;
+  isSuperAdmin?: boolean;
 }>();
 
 const items = ref({});
@@ -29,10 +30,12 @@ const endDate = ref();
 onMounted(async () => {
     const urlParams = new URLSearchParams(window.location.search);
     
-    if (urlParams.get('user_id')) {
-        selectedUser.value = urlParams.get('user_id');
+    if (props.isSuperAdmin) {
+        if (urlParams.get('user_id')) {
+            selectedUser.value = urlParams.get('user_id');
+        }
+        await fetchUsersList();
     }
-    await fetchUsersList();
     await fetchData('','',selectedUser.value);
 });
 
@@ -230,12 +233,12 @@ const onDelete = (id) => {
                         </div>
                         <div class="text-gray-900 dark:text-gray-100 flex flex-wrap justify-between w-11/12 mx-auto mb-10">
                             <!-- Date filters -->
-                            <div v-if="$page.props.auth.user.is_super_admin" class="w-full sm:w-2/4 flex-row">
+                            <div class="w-full sm:w-2/4 flex-row">
                                 <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por fecha desde</label>
                                 <input :disabled="loading" v-model="startDate" type="date" 
                                     class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                             </div>
-                            <div v-if="$page.props.auth.user.is_super_admin" class="w-full sm:w-2/4 flex-row">
+                            <div class="w-full sm:w-2/4 flex-row">
                                 <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por fecha hasta</label>
                                 <input :disabled="loading" v-model="endDate" type="date" 
                                     class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
@@ -248,7 +251,7 @@ const onDelete = (id) => {
                                     <th scope="col" class="px-6 py-3">
                                         Título
                                     </th>
-                                    <th scope="col" class="px-6 py-3">
+                                    <th scope="col" class="px-6 py-3" v-if="$page.props.auth.user.is_super_admin">
                                         Autor
                                     </th>
                                     <th scope="col" class="px-6 py-3">
@@ -269,7 +272,7 @@ const onDelete = (id) => {
                                         class="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ item.title }}
                                     </th>
-                                    <td class="px-6 py-4 capitalize">
+                                    <td class="px-6 py-4 capitalize" v-if="$page.props.auth.user.is_super_admin">
                                         {{ item.user.name }}
                                     </td>
                                     <td class="px-6 py-4 capitalize">

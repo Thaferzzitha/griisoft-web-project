@@ -31,19 +31,37 @@ class GraphicController extends Controller
             $query->where('user_id', auth()->user()->id);
         }
 
-        $graphics = $query->whereBetween('updated_at', [$startDate, $endDate])->get();
+        $graphics = $query->whereBetween('updated_at', [$startDate, $endDate])->orderBy('updated_at', 'asc')->get();
 
         $graphicsStats = [
-            'sprott' => 0,
-            'lorenz' => 0,
-            'chen' => 0,
-            'rossler' => 0,
+            'sprott' => [
+                'total' => 0,
+                'dates' => []
+            ],
+            'lorenz' => [
+                'total' => 0,
+                'dates' => []
+            ],
+            'chen' => [
+                'total' => 0,
+                'dates' => []
+            ],
+            'rossler' => [
+                'total' => 0,
+                'dates' => []
+            ],
             'start_date' => $startDate,
             'end_date' => $endDate
         ];
 
         foreach ($graphics as $graphic) {
-            $graphicsStats[$graphic->type] = $graphicsStats[$graphic->type] + 1;
+            $graphicsStats[$graphic->type]['total'] = $graphicsStats[$graphic->type]['total'] + 1;
+            $date = Carbon::parse($graphic->updated_at)->format('Y-m-d');
+            if (!isset($graphicsStats[$graphic->type]['dates'][$date])) {
+                $graphicsStats[$graphic->type]['dates'][$date] = 0;
+            }
+    
+            $graphicsStats[$graphic->type]['dates'][$date] += 1;
         }
         
         return response($graphicsStats, 200);
@@ -56,6 +74,7 @@ class GraphicController extends Controller
     {
         return Inertia::render('Graphic/Index', [
             'status' => session('status'),
+            'isSuperAdmin' => auth()->user()->is_super_admin,
         ]);
     }
 
