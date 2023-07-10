@@ -23,6 +23,8 @@ const loading = ref(false);
 const selectedType = ref('');
 const typedTitle = ref('');
 const selectedUser = ref('');
+const startDate = ref();
+const endDate = ref();
 
 onMounted(async () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -35,16 +37,22 @@ onMounted(async () => {
 });
 
 watch(selectedUser, async (newValue, oldValue) => {
-    await fetchData(selectedType.value, typedTitle.value, newValue);
+    await fetchData(selectedType.value, typedTitle.value, newValue, startDate.value, endDate.value);
 });
 watch(selectedType, async (newValue, oldValue) => {
-    await fetchData(newValue, typedTitle.value);
+    await fetchData(newValue, typedTitle.value, selectedUser.value, startDate.value, endDate.value);
 });
 watch(typedTitle, async (newValue, oldValue) => {
-    await fetchData(selectedType.value, newValue);
+    await fetchData(selectedType.value, newValue, selectedUser.value, startDate.value, endDate.value);
+});
+watch(startDate, async (newValue, oldValue) => {
+    await fetchData(selectedType.value, typedTitle.value, selectedUser.value, newValue, endDate.value);
+});
+watch(endDate, async (newValue, oldValue) => {
+    await fetchData(selectedType.value, typedTitle.value, selectedUser.value, startDate.value, newValue);
 });
 
-const fetchData = async (type = '', title = '', userId = '') => {
+const fetchData = async (type = '', title = '', userId = '', startDate = '', endDate = '') => {
     loading.value = true;
     try {
         const token = localStorage.getItem("access_token");
@@ -63,6 +71,14 @@ const fetchData = async (type = '', title = '', userId = '') => {
 
         if (userId.length !== 0) {
             url = `${url}&user_id=${userId}`;
+        }
+
+        if (startDate.length !== 0) {
+            url = `${url}&start_date=${startDate}`;
+        }
+
+        if (endDate.length !== 0) {
+            url = `${url}&end_date=${endDate}`;
         }
 
         const response = await axios.get(url, config);
@@ -188,6 +204,7 @@ const onDelete = (id) => {
                             <label for="type" class="block w-11/12 mx-auto mb-1 dark:text-gray-300">Filtro por usuario</label>
                             <select v-model="selectedUser" name="user" id="user"
                                 class="block w-11/12 mx-auto text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option :value="''" :key="''">Todos los usuarios</option>
                                 <option v-for="user in usersList" :value="user.value" :key="user.value">{{ user.text }}
                                 </option>
                             </select>
@@ -211,12 +228,28 @@ const onDelete = (id) => {
                             <input v-model="typedTitle" type="text" id="title"
                                 class="block w-11/12 mx-auto border-gray-300 border rounded-md p-2 mb-1" />
                         </div>
+                        <div class="text-gray-900 dark:text-gray-100 flex flex-wrap justify-between w-11/12 mx-auto mb-10">
+                            <!-- Date filters -->
+                            <div v-if="$page.props.auth.user.is_super_admin" class="w-full sm:w-2/4 flex-row">
+                                <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por fecha desde</label>
+                                <input :disabled="loading" v-model="startDate" type="date" 
+                                    class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            </div>
+                            <div v-if="$page.props.auth.user.is_super_admin" class="w-full sm:w-2/4 flex-row">
+                                <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por fecha hasta</label>
+                                <input :disabled="loading" v-model="endDate" type="date" 
+                                    class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            </div>
+                        </div>
                         <!-- Data Table -->
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Título
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Autor
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Tipo
@@ -236,6 +269,9 @@ const onDelete = (id) => {
                                         class="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ item.title }}
                                     </th>
+                                    <td class="px-6 py-4 capitalize">
+                                        {{ item.user.name }}
+                                    </td>
                                     <td class="px-6 py-4 capitalize">
                                         {{ item.type }}
                                     </td>

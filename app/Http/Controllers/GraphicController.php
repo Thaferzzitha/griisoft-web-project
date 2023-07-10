@@ -22,13 +22,13 @@ class GraphicController extends Controller
         $startDate = request('start_date', Carbon::now()->startOfMonth());
         $endDate = request('end_date', Carbon::now()->endOfMonth());
         $query = Graphic::query();
-        
+
         if (auth()->user()->is_super_admin) {
             if ($userId && !empty($userId)) {
-                $query = Graphic::where('user_id', $userId);
+                $query->where('user_id', $userId);
             }
         } else {
-            $query = Graphic::where('user_id', auth()->user()->id);
+            $query->where('user_id', auth()->user()->id);
         }
 
         $graphics = $query->whereBetween('updated_at', [$startDate, $endDate])->get();
@@ -74,9 +74,15 @@ class GraphicController extends Controller
         $type = request('type');
         $title = request('title');
         $userId = request('user_id');
-        
-        if ($userId && !empty($userId) && auth()->user()->is_super_admin) {
-            $query = Graphic::where('user_id', $userId);
+        $startDate = request('start_date');
+        $endDate = request('end_date');
+
+        if (auth()->user()->is_super_admin) {
+            if ($userId && !empty($userId)) {
+                $query = Graphic::where('user_id', $userId);
+            } else {
+                $query = Graphic::query();
+            }
         } else {
             $query = Graphic::where('user_id', auth()->user()->id);
         }
@@ -94,7 +100,16 @@ class GraphicController extends Controller
             $query->where('title', 'like', '%'.$title.'%');
         }
 
-        $graphics = $query->orderBy('updated_at', 'desc')->get();
+        if ($startDate && !empty($startDate)) {
+            $query->where('updated_at', '>=', $startDate);
+        }
+
+        if ($endDate && !empty($endDate)) {
+            $query->where('updated_at', '<=', $endDate);
+        }
+
+        $graphics = $query->with(['user'])
+                        ->orderBy('updated_at', 'desc')->get();
 
         return response($graphics, 200);
     }

@@ -18,7 +18,7 @@ onMounted(async () => {
     await fetchUsersList();
 });
 
-const fetchStats = async () => {
+const fetchStats = async (user_id = '', start_date = '', end_date = '') => {
     loading.value = true;
     try {
         const token = localStorage.getItem("access_token");
@@ -30,6 +30,21 @@ const fetchStats = async () => {
         };
 
         let url = `/api/graphic/stadistics`;
+
+        const params = [];
+        if (user_id !== '') {
+            params.push(`user_id=${user_id}`);
+        }
+        if (start_date !== '') {
+            params.push(`start_date=${start_date}`);
+        }
+        if (end_date !== '') {
+            params.push(`end_date=${end_date}`);
+        }
+
+        if (params.length > 0) {
+            url += `?${params.join('&')}`;
+        }
 
         const response = await axios.get(url, config);
         stats.value = response.data;
@@ -83,7 +98,17 @@ const resetDates = () => {
     
     startDate.value = firstDay.toISOString().slice(0, 10);
     endDate.value = lastDay.toISOString().slice(0, 10);
-}
+};
+
+watch(selectedUser, async (newValue, oldValue) => {
+    await fetchStats(newValue, startDate.value, endDate.value);
+});
+watch(startDate, async (newValue, oldValue) => {
+    await fetchStats(selectedUser.value, newValue, endDate.value);
+});
+watch(endDate, async (newValue, oldValue) => {
+    await fetchStats(selectedUser.value, startDate.value, newValue);
+});
 </script>
 
 <template>
@@ -97,47 +122,59 @@ const resetDates = () => {
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mb-5">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6 text-gray-900 dark:text-gray-100 flex flex-wrap justify-between">
                         <!-- User filter -->
-                        <div v-if="$page.props.auth.user.is_super_admin" class="my-5">
-                            <label for="type" class="block w-full mx-auto mb-1 dark:text-gray-300">Filtro por usuario</label>
-                            <select v-model="selectedUser" name="user" id="user"
-                                class="block w-full mx-auto text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                                <option v-for="user in usersList" :value="user.value" :key="user.value">{{ user.text }}
-                                </option>
+                        <div v-if="$page.props.auth.user.is_super_admin" class="my-5 w-full sm:w-2/4 flex-row">
+                            <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por usuario</label>
+                            <select :disabled="loading" v-model="selectedUser" name="user" id="user"
+                                class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option :value="''" :key="''">Todos los usuarios</option>
+                                <option v-for="user in usersList" :value="user.value" :key="user.value">{{ user.text }}</option>
                             </select>
+                        </div>
+                        <!-- Date filters -->
+                        <div v-if="$page.props.auth.user.is_super_admin" class="my-5 w-full sm:w-1/4 flex-row">
+                            <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por fecha desde</label>
+                            <input :disabled="loading" v-model="startDate" type="date" 
+                                class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        </div>
+                        <div v-if="$page.props.auth.user.is_super_admin" class="my-5 w-full sm:w-1/4 flex-row">
+                            <label for="type" class="block w-full mb-1 dark:text-gray-300">Filtro por fecha hasta</label>
+                            <input :disabled="loading" v-model="endDate" type="date" 
+                                class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                         </div>
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         <h2 class="font-semibold text-md text-gray-800 dark:text-gray-200 leading-tight">Número de Gráficos por Tipo</h2>
-                        <div class="flex flex-wrap mt-5">
-                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-5">
+                        <div class="flex flex-wrap mt-5" v-if="!loading">
+                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-5">
                                 <div class="dark:bg-white bg-gray-800 p-4 flex flex-col justify-center stats-center shadow-md rounded-lg h-full">
                                     <h5 class="text-xl font-bold mb-2 text-center dark:text-gray-900 text-gray-100 capitalize">sprott</h5>
                                     <h2 class="text-3xl font-bold text-center dark:text-gray-900 text-gray-100">{{ stats.sprott }}</h2>
                                 </div>
                             </div>
-                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-5">
+                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-5">
                                 <div class="dark:bg-white bg-gray-800 p-4 flex flex-col justify-center stats-center shadow-md rounded-lg h-full">
                                     <h5 class="text-xl font-bold mb-2 text-center dark:text-gray-900 text-gray-100 capitalize">lorenz</h5>
                                     <h2 class="text-3xl font-bold text-center dark:text-gray-900 text-gray-100">{{ stats.lorenz }}</h2>
                                 </div>
                             </div>
-                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-5">
+                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-5">
                                 <div class="dark:bg-white bg-gray-800 p-4 flex flex-col justify-center stats-center shadow-md rounded-lg h-full">
                                     <h5 class="text-xl font-bold mb-2 text-center dark:text-gray-900 text-gray-100 capitalize">chen</h5>
                                     <h2 class="text-3xl font-bold text-center dark:text-gray-900 text-gray-100">{{ stats.chen }}</h2>
                                 </div>
                             </div>
-                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 px-5">
+                            <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 p-5">
                                 <div class="dark:bg-white bg-gray-800 p-4 flex flex-col justify-center stats-center shadow-md rounded-lg h-full">
                                     <h5 class="text-xl font-bold mb-2 text-center dark:text-gray-900 text-gray-100 capitalize">rossler</h5>
                                     <h2 class="text-3xl font-bold text-center dark:text-gray-900 text-gray-100">{{ stats.rossler }}</h2>
                                 </div>
                             </div>
                         </div>
+                        <div v-else class="my-10">Cargando...</div>
                     </div>
                 </div>
             </div>
