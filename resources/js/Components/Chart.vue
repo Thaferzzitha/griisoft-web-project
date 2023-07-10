@@ -2,7 +2,7 @@
     <div>
         <div>
             <select id="chart-type" v-model="selectedChartType"
-                class="block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                class="mx-auto mb-5 block w-full sm:w-11/12 text-base dark:bg-gray-500 dark:text-white border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                 <option value="bar">Barras</option>
                 <option value="scatter">Dispersión</option>
             </select>
