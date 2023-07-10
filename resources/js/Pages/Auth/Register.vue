@@ -5,6 +5,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import axios from 'axios';
 
 const form = useForm({
     name: '',
@@ -15,7 +16,17 @@ const form = useForm({
 
 const submit = () => {
     form.post(route('register'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
+        onFinish: async () => {
+            const response = await axios.post('/api/auth/login', {
+                email: form.email,
+                password: form.password
+            });
+            
+            const token = response.data.token;
+
+            localStorage.setItem('access_token', token);
+            form.reset('password', 'password_confirmation')
+        },
     });
 };
 </script>
