@@ -277,13 +277,16 @@ export default {
             })
           })
           .catch((error) => {
+            const errors = error.response.data.errors;
+            const errorMessages = Object.values(errors);
+            
             Swal.fire({
-              title: 'Error',
-              text: 'Se produjo un error en la operación ' + error.response.data.errors.title,
-              icon: 'error',
+              title: "Error",
+              html: `Se produjeron los siguientes errores:<br>- ${errorMessages.join("<br>- ")}`,
+              icon: "error",
               showConfirmButton: false,
-              timer: 1500
-            })
+              timer: 5000,
+            });
           });
       } else {
         const graphId = this.atractor.id;
@@ -298,13 +301,16 @@ export default {
             })
           })
           .catch((error) => {
+            const errors = error.response.data.errors;
+            const errorMessages = Object.values(errors);
+            
             Swal.fire({
-              title: 'Error',
-              text: 'Se produjo un error en la operación ' + error.response.data.errors.title,
-              icon: 'error',
+              title: "Error",
+              html: `Se produjeron los siguientes errores:<br>- ${errorMessages.join("<br>- ")}`,
+              icon: "error",
               showConfirmButton: false,
-              timer: 1500
-            })
+              timer: 5000,
+            });
           });
       }
 

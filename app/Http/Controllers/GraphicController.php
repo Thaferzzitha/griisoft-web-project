@@ -156,6 +156,14 @@ class GraphicController extends Controller
                 $request->all(),
                 [
                     'parameters' => 'required|array',
+                    'parameters.point_number' => 'required|numeric',
+                    'parameters.step_size' => 'required|numeric',
+                    'parameters.a' => 'required|numeric',
+                    'parameters.b' => 'required|numeric',
+                    'parameters.c' => 'required|numeric',
+                    'parameters.x' => 'required|numeric',
+                    'parameters.y' => 'required|numeric',
+                    'parameters.z' => 'required|numeric',
                     'title' => 'required|string',
                 ]
             );
@@ -219,6 +227,14 @@ class GraphicController extends Controller
                 $request->all(),
                 [
                     'parameters' => 'required|array',
+                    'parameters.point_number' => 'required|numeric',
+                    'parameters.step_size' => 'required|numeric',
+                    'parameters.a' => 'required|numeric',
+                    'parameters.b' => 'required|numeric',
+                    'parameters.c' => 'required|numeric',
+                    'parameters.x' => 'required|numeric',
+                    'parameters.y' => 'required|numeric',
+                    'parameters.z' => 'required|numeric',
                     'title' => 'required|string',
                 ]
             );
