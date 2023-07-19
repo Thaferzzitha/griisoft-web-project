@@ -173,7 +173,7 @@ class GraphicController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validateGraphic->errors()
-                ], 401);
+                ], 400);
             }
 
             $graphic = Graphic::create([
@@ -244,7 +244,7 @@ class GraphicController extends Controller
                     'status' => false,
                     'message' => 'validation error',
                     'errors' => $validateGraphic->errors()
-                ], 401);
+                ], 400);
             }
 
             $graphic->update([
