@@ -42,7 +42,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'User Created Successfully',
-                'token' => $user->createToken("API TOKEN")->plainTextToken
+                'token' => $user->createToken("REGISTER TOKEN")->plainTextToken
             ], 200);
 
         } catch (\Throwable $th) {
@@ -87,7 +87,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'User Logged In Successfully',
-                'token' => $user->createToken("API TOKEN")->plainTextToken
+                'token' => $user->createToken("LOGIN TOKEN")->plainTextToken
             ], 200);
 
         } catch (\Throwable $th) {
@@ -107,10 +107,31 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         try {
-            auth()->user()->tokens()->delete();
             return [
                 'message' => 'User logged out'
             ];
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => false,
+                'message' => $th->getMessage()
+            ], 500);
+        }
+    }
+
+    /**
+     * Reset current user token
+     * @return Array
+     */
+    public function resetToken()
+    {
+        try {
+            auth()->user()->tokens()->delete();
+
+            $response = [
+                'token' => auth()->user()->createToken("API TOKEN")->plainTextToken
+            ];
+
+            return response($response, 200);
         } catch (\Throwable $th) {
             return response()->json([
                 'status' => false,
