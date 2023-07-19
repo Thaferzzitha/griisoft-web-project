@@ -1,25 +1,26 @@
 <script setup lang="ts">
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
-defineProps<{
+const props = defineProps<{
     status?: string;
     users?: {};
     isSuperAdmin?: boolean;
 }>();
 
 const loading = ref(false);
+const search = ref('');
 
 const formatDate = (date) => {
     const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric' };
     return new Date(date).toLocaleDateString('es-ES', options);
 };
 const redirect = (id) => {
-    window.location.href = route('graphic.index', {user_id: id});
+    window.location.href = route('graphic.index', { user_id: id });
 };
 
 const makeSuperAdmin = (user) => {
@@ -103,6 +104,15 @@ const removeSuperAdmin = (user) => {
         }
     });
 };
+
+const filteredUsers = computed(() => {
+    const searchTerm = search.value.trim().toLowerCase();
+    if (!searchTerm) {
+        return props.users;
+    } else {
+        return props.users.filter(user => user.name.toLowerCase().includes(searchTerm));
+    }
+});
 </script>
 
 <template>
@@ -116,6 +126,13 @@ const removeSuperAdmin = (user) => {
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="relative overflow-x-auto">
+                        <!-- Title Filter -->
+                        <div class="my-10">
+                            <label for="type" class="block w-11/12 mx-auto mb-1 dark:text-gray-300">Filtro por
+                                nombre</label>
+                            <input v-model="search" type="text" id="title" placeholder="Filtrar por nombre"
+                                class="block w-11/12 mx-auto border-gray-300 border rounded-md p-2 mb-1" />
+                        </div>
                         <!-- Data Table -->
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -138,9 +155,10 @@ const removeSuperAdmin = (user) => {
                                 </tr>
                             </thead>
                             <tbody v-if="!loading">
-                                <tr v-for="user in users" :key="user.id"
+                                <tr v-for="user in filteredUsers" :key="user.id"
                                     class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <td class="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <td
+                                        class="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {{ user.name }}
                                     </td>
                                     <td class="px-6 py-4">
@@ -158,18 +176,17 @@ const removeSuperAdmin = (user) => {
                                             @click="redirect(user.id)">
                                             Ver Historial
                                         </button>
-                                        <button
-                                            v-if="!user.roles.length"
+                                        <!-- TODO: Uncomment to restore make/remove admin to users -->
+                                        <!-- <button v-if="!user.roles.length"
                                             class="my-5 mr-5 bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded"
                                             @click="makeSuperAdmin(user)">
                                             Convertir en Administrador
                                         </button>
-                                        <button
-                                            v-if="user.roles.length"
+                                        <button v-if="user.roles.length"
                                             class="my-5 mr-5 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
                                             @click="removeSuperAdmin(user)">
                                             Quitar Administrador
-                                        </button>
+                                        </button> -->
                                     </td>
                                 </tr>
                             </tbody>
