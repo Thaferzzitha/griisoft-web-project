@@ -17,17 +17,17 @@
             step="0.01" :disabled="isReadOnly" />
         </div>
         <div>
-          <label for="a" class="block mb-1 dark:text-gray-300">Variable a</label>
+          <label for="a" class="block mb-1 dark:text-gray-300">Parámetro a</label>
           <input v-model="a" type="number" id="a" class="w-full border-gray-300 border rounded-md p-2" step="0.1"
             :disabled="isReadOnly" />
         </div>
         <div>
-          <label for="b" class="block mb-1 dark:text-gray-300">Variable b</label>
+          <label for="b" class="block mb-1 dark:text-gray-300">Parámetro b</label>
           <input v-model="b" type="number" id="b" class="w-full border-gray-300 border rounded-md p-2" step="0.1"
             :disabled="isReadOnly" />
         </div>
         <div>
-          <label for="c" class="block mb-1 dark:text-gray-300">Variable c</label>
+          <label for="c" class="block mb-1 dark:text-gray-300">Parámetro c</label>
           <input v-model="c" type="number" id="c" class="w-full border-gray-300 border rounded-md p-2" step="0.1"
             :disabled="isReadOnly" />
         </div>
