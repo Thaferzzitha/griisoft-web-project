@@ -15,7 +15,7 @@ const updateToken = async () => {
             title: 'Cargando...',
             allowOutsideClick: false,
             didOpen: () => {
-            Swal.showLoading();
+                Swal.showLoading();
             },
         };
         const loadingAlert: SweetAlertResult = Swal.fire(loadingAlertOptions);
@@ -76,7 +76,8 @@ const copy = () => {
 
             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                 Al regenerar o crear por primera vez su token de autenticación se eliminarán todos los tokens que haya
-                creado anteriormente por lo que esos tokens ya no serán válidos de usar en el API.
+                creado anteriormente, por lo que ya no serán válidos de usar en el API.
+                <br>
                 Siempre que se regenere o cree el token de autenticación se mostrará solo una vez, asegurese de guardarlo en
                 un lugar seguro.
             </p>
@@ -109,7 +110,7 @@ const copy = () => {
                                     d="M11.066 4H7v5a2 2 0 0 1-2 2H0v7a1.969 1.969 0 0 0 1.933 2h9.133A1.97 1.97 0 0 0 13 18V6a1.97 1.97 0 0 0-1.934-2Z">
                                 </path>
                             </svg>
-                            <span class="copy-text">Copy</span>
+                            <span class="copy-text">Copiar</span>
                         </button>
                     </div>
                 </div>
@@ -119,4 +120,5 @@ const copy = () => {
                 </div>
             </div>
         </Modal>
-    </section></template>
+    </section>
+</template>
