@@ -81,7 +81,95 @@ class GraphicController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Listar gráficos
+     *
+     * @OA\Get(
+     *     path="/api/graphic/list",
+     *     tags={"Gráfico"},
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Parameter(
+     *         name="type",
+     *         in="query",
+     *         description="Tipo de gráfico (rossler, sprott, chen o lorenz)",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="title",
+     *         in="query",
+     *         description="Título del gráfico (búsqueda parcial)",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="user_id",
+     *         in="query",
+     *         description="ID del usuario para filtrar gráficos (solo para super administradores)",
+     *         required=false,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Parameter(
+     *         name="start_date",
+     *         in="query",
+     *         description="Fecha de inicio para filtrar gráficos (YYYY-MM-DD)",
+     *         required=false,
+     *         @OA\Schema(type="string", format="date")
+     *     ),
+     *     @OA\Parameter(
+     *         name="end_date",
+     *         in="query",
+     *         description="Fecha de fin para filtrar gráficos (YYYY-MM-DD)",
+     *         required=false,
+     *         @OA\Schema(type="string", format="date")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Gráficos listados exitosamente",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(
+     *                 @OA\Property(property="id", type="integer", example=16),
+     *                 @OA\Property(property="user_id", type="integer", example=2),
+     *                 @OA\Property(property="title", type="string", example="Atractor de Sprott"),
+     *                 @OA\Property(property="parameters", type="object",
+     *                     @OA\Property(property="point_number", type="integer", example=10000),
+     *                     @OA\Property(property="step_size", type="float", example=0.01),
+     *                     @OA\Property(property="a", type="float", example=5),
+     *                     @OA\Property(property="b", type="float", example=2),
+     *                     @OA\Property(property="c", type="float", example=1.6),
+     *                     @OA\Property(property="x", type="float", example=1),
+     *                     @OA\Property(property="y", type="float", example=1),
+     *                     @OA\Property(property="z", type="float", example=1),
+     *                 ),
+     *                 @OA\Property(property="type", type="string", example="sprott"),
+     *                 @OA\Property(property="created_at", type="string", format="date-time", example="2023-07-25T02:47:17.000000Z"),
+     *                 @OA\Property(property="updated_at", type="string", format="date-time", example="2023-07-25T02:47:17.000000Z"),
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Tipo de gráfico no válido",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="error", type="string", example="Tipo de gráfico no válido, los tipos válidos son: rossler, sprott, chen y lorenz")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="No autorizado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error interno del servidor",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Internal Server Error")
+     *         )
+     *     )
+     * )
      */
     public function list()
     {
@@ -129,8 +217,11 @@ class GraphicController extends Controller
             $query->where('updated_at', '<=', $endDate);
         }
 
-        $graphics = $query->with(['user'])
-                        ->orderBy('updated_at', 'desc')->get();
+        if (auth()->user()->is_super_admin) {
+            $query->with(['user']);
+        }
+        
+        $graphics = $query->orderBy('updated_at', 'desc')->get();
 
         return response($graphics, 200);
     }
@@ -147,7 +238,86 @@ class GraphicController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo gráfico
+     *
+     * @OA\Post(
+     *     path="/api/graphic/store",
+     *     tags={"Gráfico"},
+     *     security={{"bearerAuth": {}}},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 required={"title", "parameters", "type"},
+     *                 @OA\Property(property="title", type="string", example="Atractor de Rossler"),
+     *                 @OA\Property(property="parameters", type="object",
+     *                     @OA\Property(property="point_number", type="integer", example=10000),
+     *                     @OA\Property(property="step_size", type="float", example=0.01),
+     *                     @OA\Property(property="a", type="float", example=0.2),
+     *                     @OA\Property(property="b", type="float", example=0.2),
+     *                     @OA\Property(property="c", type="float", example=5.7),
+     *                     @OA\Property(property="x", type="float", example=1),
+     *                     @OA\Property(property="y", type="float", example=1),
+     *                     @OA\Property(property="z", type="float", example=1),
+     *                 ),
+     *                 @OA\Property(property="type", type="string", example="rossler",
+     *                     enum={"rossler", "sprott", "chen", "lorenz"}
+     *                 ),
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Gráfico creado exitosamente",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="data", type="object",
+     *                 @OA\Property(property="user_id", type="integer", example=2),
+     *                 @OA\Property(property="title", type="string", example="Atractor de Rossler"),
+     *                 @OA\Property(property="parameters", type="object",
+     *                     @OA\Property(property="point_number", type="integer", example=10000),
+     *                     @OA\Property(property="step_size", type="float", example=0.01),
+     *                     @OA\Property(property="a", type="float", example=0.2),
+     *                     @OA\Property(property="b", type="float", example=0.2),
+     *                     @OA\Property(property="c", type="float", example=5.7),
+     *                     @OA\Property(property="x", type="float", example=1),
+     *                     @OA\Property(property="y", type="float", example=1),
+     *                     @OA\Property(property="z", type="float", example=1),
+     *                 ),
+     *                 @OA\Property(property="type", type="string", example="rossler"),
+     *                 @OA\Property(property="updated_at", type="string", format="date-time", example="2023-07-25T02:54:39.000000Z"),
+     *                 @OA\Property(property="created_at", type="string", format="date-time", example="2023-07-25T02:54:39.000000Z"),
+     *                 @OA\Property(property="id", type="integer", example=17)
+     *             ),
+     *             @OA\Property(property="status", type="boolean", example=true),
+     *             @OA\Property(property="message", type="string", example="Graphic created successfully")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Error de validación",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="validation error"),
+     *             @OA\Property(property="errors", type="object", example={"title": {"The title field is required."}})
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="No autorizado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error interno del servidor",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Internal Server Error")
+     *         )
+     *     )
+     * )
      */
     public function store(Request $request)
     {
@@ -165,6 +335,7 @@ class GraphicController extends Controller
                     'parameters.y' => 'required|numeric',
                     'parameters.z' => 'required|numeric',
                     'title' => 'required|string',
+                    'type' => 'required|string',
                 ]
             );
 
@@ -198,7 +369,66 @@ class GraphicController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Mostrar detalles de un gráfico por su ID
+     *
+     * @OA\Get(
+     *     path="/api/graphic/{id}",
+     *     tags={"Gráfico"},
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID del gráfico a mostrar",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Detalles del gráfico",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="id", type="integer", example=17),
+     *             @OA\Property(property="user_id", type="integer", example=2),
+     *             @OA\Property(property="title", type="string", example="Atractor de Rossler"),
+     *             @OA\Property(property="parameters", type="object",
+     *                 @OA\Property(property="point_number", type="integer", example=10000),
+     *                 @OA\Property(property="step_size", type="float", example=0.01),
+     *                 @OA\Property(property="a", type="float", example=0.2),
+     *                 @OA\Property(property="b", type="float", example=0.2),
+     *                 @OA\Property(property="c", type="float", example=5.7),
+     *                 @OA\Property(property="x", type="float", example=1),
+     *                 @OA\Property(property="y", type="float", example=1),
+     *                 @OA\Property(property="z", type="float", example=1),
+     *             ),
+     *             @OA\Property(property="type", type="string", example="rossler"),
+     *             @OA\Property(property="updated_at", type="string", format="date-time", example="2023-07-25T02:54:39.000000Z"),
+     *             @OA\Property(property="created_at", type="string", format="date-time", example="2023-07-25T02:54:39.000000Z")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Gráfico no encontrado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Graphic not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="No autorizado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error interno del servidor",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Internal Server Error")
+     *         )
+     *     )
+     * )
      */
     public function show(string $id)
     {
@@ -218,7 +448,102 @@ class GraphicController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualizar un gráfico existente por su ID
+     *
+     * @OA\Put(
+     *     path="/api/graphic/{graphic}",
+     *     tags={"Gráfico"},
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Parameter(
+     *         name="graphic",
+     *         in="path",
+     *         description="ID del gráfico a actualizar",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 required={"title", "parameters", "type"},
+     *                 @OA\Property(property="title", type="string", example="Atractor de Rossler"),
+     *                 @OA\Property(property="parameters", type="object",
+     *                     @OA\Property(property="point_number", type="integer", example=10000),
+     *                     @OA\Property(property="step_size", type="float", example=0.01),
+     *                     @OA\Property(property="a", type="float", example=0.2),
+     *                     @OA\Property(property="b", type="float", example=0.2),
+     *                     @OA\Property(property="c", type="float", example=5.7),
+     *                     @OA\Property(property="x", type="float", example=1),
+     *                     @OA\Property(property="y", type="float", example=1),
+     *                     @OA\Property(property="z", type="float", example=1),
+     *                 ),
+     *                 @OA\Property(property="type", type="string", example="rossler",
+     *                     enum={"rossler", "sprott", "chen", "lorenz"}
+     *                 ),
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Gráfico actualizado exitosamente",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="data", type="object",
+     *                 @OA\Property(property="id", type="integer", example=17),
+     *                 @OA\Property(property="user_id", type="integer", example=2),
+     *                 @OA\Property(property="title", type="string", example="Atractor de Rossler"),
+     *                 @OA\Property(property="parameters", type="object",
+     *                     @OA\Property(property="point_number", type="integer", example=10000),
+     *                     @OA\Property(property="step_size", type="float", example=0.01),
+     *                     @OA\Property(property="a", type="float", example=0.2),
+     *                     @OA\Property(property="b", type="float", example=0.2),
+     *                     @OA\Property(property="c", type="float", example=5.7),
+     *                     @OA\Property(property="x", type="float", example=1),
+     *                     @OA\Property(property="y", type="float", example=1),
+     *                     @OA\Property(property="z", type="float", example=1),
+     *                 ),
+     *                 @OA\Property(property="type", type="string", example="rossler"),
+     *                 @OA\Property(property="updated_at", type="string", format="date-time", example="2023-07-25T02:54:39.000000Z"),
+     *                 @OA\Property(property="created_at", type="string", format="date-time", example="2023-07-25T02:54:39.000000Z")
+     *             ),
+     *             @OA\Property(property="status", type="boolean", example=true),
+     *             @OA\Property(property="message", type="string", example="Graphic updated successfully")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=400,
+     *         description="Error de validación",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="validation error"),
+     *             @OA\Property(property="errors", type="object", example={"title": {"The title field is required."}})
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="No autorizado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Gráfico no encontrado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Graphic not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error interno del servidor",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Internal Server Error")
+     *         )
+     *     )
+     * )
      */
     public function update(Request $request, Graphic $graphic)
     {
@@ -236,6 +561,7 @@ class GraphicController extends Controller
                     'parameters.y' => 'required|numeric',
                     'parameters.z' => 'required|numeric',
                     'title' => 'required|string',
+                    'type' => 'required|string',
                 ]
             );
 
@@ -268,7 +594,51 @@ class GraphicController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Eliminar un gráfico por su ID
+     *
+     * @OA\Delete(
+     *     path="/api/graphic/{graphic}",
+     *     tags={"Gráfico"},
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Parameter(
+     *         name="graphic",
+     *         in="path",
+     *         description="ID del gráfico a eliminar",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Gráfico eliminado exitosamente",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Graphic deleted successfully")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="No autorizado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Unauthorized")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Gráfico no encontrado",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="Graphic not found")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error interno del servidor",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Internal Server Error")
+     *         )
+     *     )
+     * )
      */
     public function destroy(Graphic $graphic)
     {

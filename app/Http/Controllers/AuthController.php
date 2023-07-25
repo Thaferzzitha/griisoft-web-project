@@ -11,9 +11,64 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends Controller
 {
     /**
-     * Register a new user
-     * @param Request $request
-     * @return User
+     * Registrar la información de un Usuario
+     *
+     * @OA\Post (
+     *     path="/api/auth/register",
+     *     tags={"Autenticación"},
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="name",
+     *                     type="string"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="email",
+     *                     type="string",
+     *                     format="email"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="password",
+     *                     type="string",
+     *                     format="password"
+     *                 ),
+     *                 example={
+     *                     "name": "John Doe",
+     *                     "email": "john@example.com",
+     *                     "password": "secretpassword"
+     *                 }
+     *             )
+     *         )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Usuario creado exitosamente",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", type="boolean", example=true),
+     *              @OA\Property(property="message", type="string", example="User Created Successfully"),
+     *              @OA\Property(property="token", type="string", example="TOKEN_STRING")
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Error de validación",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", type="boolean", example=false),
+     *              @OA\Property(property="message", type="string", example="validation error"),
+     *              @OA\Property(property="errors", type="object")
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=500,
+     *          description="Error interno del servidor",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", type="boolean", example=false),
+     *              @OA\Property(property="message", type="string", example="Internal Server Error")
+     *          )
+     *      )
+     * )
      */
     public function register(Request $request)
     {
@@ -54,9 +109,58 @@ class AuthController extends Controller
     }
 
     /**
-     * Login a user
-     * @param Request $request
-     * @return User
+     * Iniciar sesión de usuario
+     *
+     * @OA\Post(
+     *     path="/api/auth/login",
+     *     tags={"Autenticación"},
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="email",
+     *                     type="string",
+     *                     format="email"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="password",
+     *                     type="string",
+     *                     format="password"
+     *                 ),
+     *                 example={
+     *                     "email": "john@example.com",
+     *                     "password": "secretpassword"
+     *                 }
+     *             )
+     *         )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="Inicio de sesión exitoso",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", type="boolean", example=true),
+     *              @OA\Property(property="message", type="string", example="User Logged In Successfully"),
+     *              @OA\Property(property="token", type="string", example="TOKEN_STRING")
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Error de inicio de sesión",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", type="boolean", example=false),
+     *              @OA\Property(property="message", type="string", example="Email & Password does not match with our record.")
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=500,
+     *          description="Error interno del servidor",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="status", type="boolean", example=false),
+     *              @OA\Property(property="message", type="string", example="Internal Server Error")
+     *          )
+     *      )
+     * )
      */
     public function login(Request $request)
     {
@@ -100,9 +204,27 @@ class AuthController extends Controller
 
 
     /**
-     * Logout a user
-     * @param Request $request
-     * @return User
+     * Cerrar sesión de usuario
+     *
+     * @OA\Post(
+     *     path="/api/auth/logout",
+     *     tags={"Autenticación"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Cierre de sesión exitoso",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="message", type="string", example="User logged out")
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Error interno del servidor",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="status", type="boolean", example=false),
+     *             @OA\Property(property="message", type="string", example="Internal Server Error")
+     *         )
+     *     )
+     * )
      */
     public function logout(Request $request)
     {
@@ -117,26 +239,20 @@ class AuthController extends Controller
             ], 500);
         }
     }
-
-    /**
-     * Reset current user token
-     * @return Array
-     */
-    public function resetToken()
+    
+    public function resetToken(Request $request)
     {
-        try {
-            auth()->user()->tokens()->delete();
-
-            $response = [
-                'token' => auth()->user()->createToken("API TOKEN")->plainTextToken
-            ];
-
-            return response($response, 200);
-        } catch (\Throwable $th) {
-            return response()->json([
-                'status' => false,
-                'message' => $th->getMessage()
-            ], 500);
+        if (!$request->bearerToken()) {
+            return response()->json(['message' => 'Unauthorized'], 401);
         }
+
+        $request->user()->tokens()->delete();
+
+        // Generar y devolver un nuevo token de acceso
+        $response = [
+            'token' => $request->user()->createToken("API TOKEN")->plainTextToken
+        ];
+
+        return response()->json($response, 200);
     }
 }
