@@ -46,34 +46,32 @@ defineProps<{
             />
 
             <div class="w-11/12 mx-auto mb-8">
-                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 my-10">
                     <h1 class="dark:text-white text-4xl font-bold text-center mb-4">Enfoque de cifrado de objetos JSON utilizando sincronización caótica a partir del análisis de un conjunto de atractores IDIPI-28</h1>
                     <p class="dark:text-gray-300 text-lg text-justify mb-8">Resumen. En la actualidad en mayor o menor medida los productos software desarrollados se encuentran expuestos al Internet. Internamente estos productos están conformados por componentes software los cuales, muchos de ellos, se intercomunican a través del Internet, enviando y recibiendo información. Un formato común para el intercambio de información entre estos componentes es el formato JSON, Sin bien existen algunos enfoque para asegurar la información en este formato, se ha observado algunas amenazas que implican el acceso no autorizado a la información contenida en los objetos JSON. Con el fin de ofrecer una alternativa al actual enfoque de cifrado de objetos JSON en la presente investigación se propone el desarrollo de un enfoque de cifrado de objetos JSON utilizando sincronización caótica a partir de la selección de un conjunto de atractores. El enfoque a desarrollar se pretende pueda ser utilizado en el ámbito académico por docentes e investigadores, así como por profesionales en la industria de software.</p>
                 </div>
-                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 my-10">
                     <h1 class="dark:text-white text-4xl font-bold text-center mb-4">Sincronización Caótica</h1>
                     <p class="dark:text-gray-300 text-lg text-justify mb-8">La sincronización caótica es un fenómeno en el que dos o más sistemas caóticos pueden ajustar su dinámica para volverse idénticos o similares. Esto puede suceder cuando los sistemas están acoplados por alguna forma de interacción o comunicación, como una fuerza impulsora común, una señal de retroalimentación o un entorno compartido. La sincronización caótica tiene aplicaciones en varios campos, como la comunicación segura, las redes neuronales y las redes complejas.</p>
-                    <p class="dark:text-gray-300 text-lg text-justify mb-8"></p>
                 </div>
-                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 my-10">
                     <h1 class="dark:text-white text-4xl font-bold text-center mb-4">Atractor de Rossler</h1>
                     <p class="dark:text-gray-300 text-lg text-justify mb-8">El atractor de Rössler describe el comportamiento de un sistema dinámico de tres ecuaciones diferenciales ordinarias no lineales. Fue estudiado originalmente por Otto Rössler en la década de 1970 y exhibe dinámicas caóticas y propiedades fractales. El atractor de Rössler se puede utilizar para modelar el equilibrio en reacciones químicas y otros fenómenos. Las ecuaciones que definen el atractor de Rössler son: donde A, B y C son los parametros de equilibrio. El atractor de Rössler tiene forma de espiral que se tuerce y gira en tres dimensiones. Tiene algunas similitudes con el atractor de Lorenz, pero es más simple y tiene solo una variedad.</p>
-                    <ul class="list-inside ...">
-                        <li></li>
-                            <!-- ... -->
-                    </ul>
+                    <img src="/assets/images/rossler-atractor.jpeg" alt="" class="dark:bg-transparent bg-gray-200 p-2 rounded mx-auto">
                 </div>
-                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 my-10">
                     <h1 class="dark:text-white text-4xl font-bold text-center mb-4">Atractor de Lorenz</h1>
                     <p class="dark:text-gray-300 text-lg text-justify mb-8">El atractor de Lorenz es un modelo matemático de un sistema dinámico (caótico) que exhibe una dependencia sensible de las condiciones iniciales. Fue introducido por primera vez por Edward Lorenz en 1963 como una representación simplificada de la convección atmosférica. El atractor de Lorenz consta de tres ecuaciones diferenciales acopladas que describen la evolución de tres variables: x, y y z. Las ecuaciones tienen tres parámetros: sigma, rho y beta, que controlan la forma y el comportamiento del atractor. El atractor de Lorenz es uno de los ejemplos más famosos de un atractor extraño, un conjunto de puntos en el espacio de fase que tiene una estructura fractal y atrae trayectorias cercanas</p>
-                </div>
-                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                    <img src="/assets/images/lorenz-atractor.jpeg" alt="" class="dark:bg-transparent bg-gray-200 p-2 rounded mx-auto">                </div>
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 my-10">
                     <h1 class="dark:text-white text-4xl font-bold text-center mb-4">Atractor de Chen</h1>
                     <p class="dark:text-gray-300 text-lg text-justify mb-8">El atractor de Chen es un tipo de atractor de desplazamiento múltiple propuesto por Guanrong Chen, un matemático chino e investigador del caos. El atractor de Chen es un sistema dinámico tridimensional que exhibe un comportamiento caótico y tiene una estructura geométrica compleja. El atractor de Chen se puede describir mediante un sistema de tres ecuaciones diferenciales ordinarias no lineales con tres parámetros. El atractor de Chen tiene algunas similitudes con el atractor de Lorenz, pero también algunas diferencias, como la forma y el número de puntos de equilibrio.</p>
+                    <img src="/assets/images/chen-atractor.jpeg" alt="" class="dark:bg-transparent bg-gray-200 p-2 rounded mx-auto">
                 </div>
-                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 my-10">
                     <h1 class="dark:text-white text-4xl font-bold text-center mb-4">Atractor de Sprott</h1>
                     <p class="dark:text-gray-300 text-lg text-justify mb-8">El atractor de Sprott es un tipo de atractor caótico que tiene forma de mariposa y dimensión fraccionaria. Fue descubierto por Julien C. Sprott, físico e investigador del caos de la Universidad de Wisconsin-Madison. El atractor de Sprott se puede generar mediante un mapa cuadrático tridimensional con términos no lineales. El atractor de Sprott tiene propiedades interesantes como la multiestabilidad, la coexistencia de múltiples atractores y la sensibilidad a las condiciones iniciales. El atractor Sprott se puede utilizar para modelar fenómenos complejos como redes neuronales, sistemas láser y percepción.</p>
+                    <img src="/assets/images/sprott-atractor.jpeg" alt="" class="dark:bg-transparent bg-gray-200 p-2 rounded mx-auto">
                 </div>
             </div>
 
