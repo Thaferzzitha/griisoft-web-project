@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario registrado puede crear, gráficar y guardar un gráfico.</description>
+   <name>Crear Gráfico</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c50b6bf3-12c2-499e-aff4-28a4538440a4</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El administrador del sistema puede listar el historial de gráficos de cualquier Usuario.</description>
+   <name>Listar Gráficos de cualquier Usuario</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c7227072-aee4-42ce-9730-21a949f24875</testCaseGuid>
+</TestCaseEntity>

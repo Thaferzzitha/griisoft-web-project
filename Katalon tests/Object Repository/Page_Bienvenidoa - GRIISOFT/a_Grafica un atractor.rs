@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_Grafica un atractor</name>
+   <tag></tag>
+   <elementGuidId>447370ec-5c52-411a-ae6d-f8a1f0d465ad</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div[2]/div/div/div/a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>4a6eab23-2264-4c4c-8db5-a02c1c5b1f8a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/graphic/create</value>
+      <webElementGuid>142f4e12-9e24-4ce3-9759-c3330191b932</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded</value>
+      <webElementGuid>da8383ab-3c35-48d8-b9e0-d8070b3ca1cf</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Grafica un atractor!</value>
+      <webElementGuid>e59cd3fa-9db3-4b57-b0a0-37d850243ed9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[@class=&quot;relative sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white&quot;]/div[@class=&quot;container mx-auto py-8&quot;]/div[@class=&quot;w-11/12 mx-auto mb-8&quot;]/div[@class=&quot;bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8&quot;]/div[@class=&quot;flex justify-center mb-6&quot;]/a[@class=&quot;bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded&quot;]</value>
+      <webElementGuid>7e33d857-77c6-44d1-b635-9e469cfebb3c</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div[2]/div/div/div/a</value>
+      <webElementGuid>2473fce1-7786-45ed-83b6-bfafc8ca1fc4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'Grafica un atractor!')]</value>
+      <webElementGuid>569e3061-2711-4ac7-b277-d86b2aa89971</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Atractores Caóticos'])[1]/following::a[1]</value>
+      <webElementGuid>83eb6f84-4536-4525-bfdd-9b4da6c59c73</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Registrar'])[1]/following::a[1]</value>
+      <webElementGuid>61d41425-30bb-404d-8e8a-b6c72b80330b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Documentación del API de Graficación'])[1]/preceding::a[1]</value>
+      <webElementGuid>3dbb7b20-de04-4a80-b8ba-fa1faf404d59</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Ver documentación'])[1]/preceding::a[1]</value>
+      <webElementGuid>012d1899-8049-4bf6-ba20-3811b56a40f7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Grafica un atractor!']/parent::*</value>
+      <webElementGuid>196bc669-a671-4bc1-bfd8-61a0fd76a4e5</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/graphic/create')]</value>
+      <webElementGuid>90d92f06-a5d4-43dc-b3f2-d5516a92f908</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/div/div/a</value>
+      <webElementGuid>fca985e0-4389-4b77-b305-c174b499f1d4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/graphic/create' and (text() = 'Grafica un atractor!' or . = 'Grafica un atractor!')]</value>
+      <webElementGuid>c2c42b6e-e902-4c28-aa66-b7fad26dd72f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

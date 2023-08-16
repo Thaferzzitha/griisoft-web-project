@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario visitante podrá gráficar un atractor caótico sin necesidad de registrarse en el sistema.</description>
+   <name>Gráficar Atractor</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d6d49141-7d84-4859-887b-7dde64e26d83</testCaseGuid>
+</TestCaseEntity>

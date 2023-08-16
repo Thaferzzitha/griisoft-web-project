@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_Historial de Grficos</name>
+   <tag></tag>
+   <elementGuidId>31d5eb57-a6d8-46ad-a6ca-fdb1c052e61e</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div/nav/div/div/div/div[2]/a[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>69af59cf-5bfb-4b13-8cb4-b0bcf98fe46b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gray-300 dark:focus:border-gray-700 transition duration-150 ease-in-out</value>
+      <webElementGuid>bd00f5fe-bcc4-4766-8c4b-dab8f295f41b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>http://127.0.0.1:8000/graphic</value>
+      <webElementGuid>d67d28b1-2456-4bba-8ab6-6182f3fa7615</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Historial de Gráficos </value>
+      <webElementGuid>27e34267-319f-4723-b073-7c8cdb6a3fac</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/nav[@class=&quot;bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700&quot;]/div[@class=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&quot;]/div[@class=&quot;flex justify-between h-16&quot;]/div[@class=&quot;flex&quot;]/div[@class=&quot;hidden space-x-8 sm:-my-px sm:ml-10 sm:flex&quot;]/a[@class=&quot;inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-700 focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gray-300 dark:focus:border-gray-700 transition duration-150 ease-in-out&quot;]</value>
+      <webElementGuid>5a4f6a2f-26aa-4682-91be-fd76f978cdda</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/nav/div/div/div/div[2]/a[2]</value>
+      <webElementGuid>3fea5bb6-9195-42e0-beae-3e1bbfab1a2b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Thalía Zárate'])[1]/preceding::a[2]</value>
+      <webElementGuid>c5ab9427-008e-4549-bec7-a1ae8f5b702a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Historial de Gráficos']/parent::*</value>
+      <webElementGuid>6603ff73-2aa1-4ff8-a426-7e256781daa6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[@href='http://127.0.0.1:8000/graphic']</value>
+      <webElementGuid>17a9fc89-24b9-4e3f-a082-d42672726d02</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//a[2]</value>
+      <webElementGuid>aed78b82-f543-4565-8d8c-e1deb34d670f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = 'http://127.0.0.1:8000/graphic' and (text() = ' Historial de Gráficos ' or . = ' Historial de Gráficos ')]</value>
+      <webElementGuid>cb548517-7e70-450e-bc42-08607dfc7923</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

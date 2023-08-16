@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Thala Fernanda Zrate</name>
+   <tag></tag>
+   <elementGuidId>8904f989-1acb-4994-840e-d062c9ef0598</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//button[@type='button']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>7ce065a9-a2cd-47a3-ac81-cde683bdf9aa</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>32afd980-e2ae-4165-b3b5-9e42c011ab88</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150</value>
+      <webElementGuid>64e999cd-bb3a-4c2f-8c89-5544d9becb3b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Thalía Fernanda Zárate </value>
+      <webElementGuid>ffe144c3-d961-4782-bed8-aa7154769560</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/nav[@class=&quot;bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700&quot;]/div[@class=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&quot;]/div[@class=&quot;flex justify-between h-16&quot;]/div[@class=&quot;hidden sm:flex sm:items-center sm:ml-6&quot;]/div[@class=&quot;ml-3 relative&quot;]/div[@class=&quot;relative&quot;]/div[1]/span[@class=&quot;inline-flex rounded-md&quot;]/button[@class=&quot;inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150&quot;]</value>
+      <webElementGuid>951925bf-97b7-4490-9b05-83cba41c7119</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//button[@type='button']</value>
+      <webElementGuid>abf9dce6-9da6-414e-9ad8-8c965ebf91a4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/nav/div/div/div[2]/div/div/div/span/button</value>
+      <webElementGuid>09e0c711-1564-42ba-8934-3f80823fb47c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Thalía Fernanda Zárate']/parent::*</value>
+      <webElementGuid>a5a1a545-20c0-4319-a54e-b7a5a360c957</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button</value>
+      <webElementGuid>e09b3264-3767-48ab-9f7e-cf16963d3c7f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'button' and (text() = 'Thalía Fernanda Zárate ' or . = 'Thalía Fernanda Zárate ')]</value>
+      <webElementGuid>176628d6-9d75-40c3-b1a8-c019ecad9526</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

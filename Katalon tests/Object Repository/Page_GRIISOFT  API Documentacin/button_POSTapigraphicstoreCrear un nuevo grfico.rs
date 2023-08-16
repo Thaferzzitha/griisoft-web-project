@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_POSTapigraphicstoreCrear un nuevo grfico</name>
+   <tag></tag>
+   <elementGuidId>bf485d9c-1da2-442e-a894-ccd86286a113</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>#operations-Gráfico-600531180d7f3c956497b892d1cb5f87 > div.opblock-summary.opblock-summary-post > button.opblock-summary-control</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='operations-Gráfico-600531180d7f3c956497b892d1cb5f87']/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>020dbd0f-0956-49c5-a8b7-6fc5212e36e9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-label</name>
+      <type>Main</type>
+      <value>post ​/api​/graphic​/store</value>
+      <webElementGuid>b020b578-1097-425c-a54e-0cd8e04d3f6a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-expanded</name>
+      <type>Main</type>
+      <value>false</value>
+      <webElementGuid>5ac2c3f4-5472-42fb-a206-42fa221dd9cf</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>opblock-summary-control</value>
+      <webElementGuid>4d3ca184-2ef8-4782-81fa-ac92499a3faa</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>POST/api/graphic/storeCrear un nuevo gráfico</value>
+      <webElementGuid>b1d3565d-7f04-440b-b9ee-e727d49df125</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;operations-Gráfico-600531180d7f3c956497b892d1cb5f87&quot;)/div[@class=&quot;opblock-summary opblock-summary-post&quot;]/button[@class=&quot;opblock-summary-control&quot;]</value>
+      <webElementGuid>259aaf73-e31c-4d20-81b1-b9fd9429ca61</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='operations-Gráfico-600531180d7f3c956497b892d1cb5f87']/div/button</value>
+      <webElementGuid>a34b4fd3-a1db-4e99-86e6-66cadc291b1c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No links'])[12]/following::button[1]</value>
+      <webElementGuid>29c44425-018c-431e-ba25-a5479f9a76ad</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('', '&quot;', 'Internal Server Error', '&quot;', '')])[4]/following::button[1]</value>
+      <webElementGuid>1a3770a7-434c-41e8-aa5a-c83e23ca8148</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//span[2]/div/div/div/span[2]/div/div/button</value>
+      <webElementGuid>430731d3-f65c-4736-a40a-79d9181c1a27</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'POST/api/graphic/storeCrear un nuevo gráfico' or . = 'POST/api/graphic/storeCrear un nuevo gráfico')]</value>
+      <webElementGuid>39f50c5c-9af3-4b94-b4c5-d3893ad43652</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

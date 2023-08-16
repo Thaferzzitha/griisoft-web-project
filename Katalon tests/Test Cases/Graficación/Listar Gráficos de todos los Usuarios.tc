@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Como administrador del sistema, quiero poder ver el historial de gráficos creados por todos los usuarios registrados dentro del sistema.</description>
+   <name>Listar Gráficos de todos los Usuarios</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f9517bde-bf9c-49ce-b94d-93cad79ad3fd</testCaseGuid>
+</TestCaseEntity>

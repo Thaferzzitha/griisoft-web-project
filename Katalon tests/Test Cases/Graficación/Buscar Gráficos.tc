@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario registrado podrá buscar gráficos mediante filtros.</description>
+   <name>Buscar Gráficos</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c30fc995-ae90-45ce-a4f4-8e205542e9a2</testCaseGuid>
+</TestCaseEntity>

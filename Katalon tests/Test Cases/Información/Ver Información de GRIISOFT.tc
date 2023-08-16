@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Cualquier usuario podrá ver la información de GRIISOFT</description>
+   <name>Ver Información de GRIISOFT</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e1a18b95-e3c7-4eaa-9d4e-64b5b59209e6</testCaseGuid>
+</TestCaseEntity>

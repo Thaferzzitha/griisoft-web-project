@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario registrado puede listar todos los gráficos que haya creado.</description>
+   <name>Listar Gráficos de un Usuario</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>bf226231-252c-4929-9425-3c5e340b1679</testCaseGuid>
+</TestCaseEntity>

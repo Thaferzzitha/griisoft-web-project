@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario registrado podrá ver un gráfico que haya creado previamente.</description>
+   <name>Ver Gráfico de un Usuario</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>88f43094-fbe7-44e9-8a10-bd6ad2cc6afd</testCaseGuid>
+</TestCaseEntity>

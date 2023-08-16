@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario registrado podrá eliminar el registro de un gráfico que haya creado previamente.</description>
+   <name>Eliminar Gráfico</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>c0a3b2a0-95a5-4643-a5d0-79f7f6c0e565</testCaseGuid>
+</TestCaseEntity>

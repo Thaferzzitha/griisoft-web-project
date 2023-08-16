@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_DELETEapigraphicgraphicEliminar un g_6e34d1</name>
+   <tag></tag>
+   <elementGuidId>650a942b-e721-4d3c-bfa4-8d6699d76347</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.opblock-summary.opblock-summary-delete > button.opblock-summary-control</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='operations-Gráfico-a900a8619479758a21dc2f84f27a3563']/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>98b2570f-7d7e-48cd-ac1f-f090906b3f24</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-label</name>
+      <type>Main</type>
+      <value>delete ​/api​/graphic​/{graphic}</value>
+      <webElementGuid>3b818878-9010-445e-aea2-f5b57c2c3eb0</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-expanded</name>
+      <type>Main</type>
+      <value>false</value>
+      <webElementGuid>d976daa2-be72-4a21-ab25-069854721c56</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>opblock-summary-control</value>
+      <webElementGuid>bb2172a3-387a-4d5b-b3d0-71caffd51e41</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>DELETE/api/graphic/{graphic}Eliminar un gráfico por su ID</value>
+      <webElementGuid>6ca164e1-68dc-4b0e-98b1-028901356427</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;operations-Gráfico-a900a8619479758a21dc2f84f27a3563&quot;)/div[@class=&quot;opblock-summary opblock-summary-delete&quot;]/button[@class=&quot;opblock-summary-control&quot;]</value>
+      <webElementGuid>a9871543-11ec-4b35-945a-1d968647ca49</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='operations-Gráfico-a900a8619479758a21dc2f84f27a3563']/div/button</value>
+      <webElementGuid>20bfac94-3235-470d-ba39-630ca985c505</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No links'])[25]/following::button[1]</value>
+      <webElementGuid>62bfb6bd-d9ae-4fa2-b965-11bf769d6781</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('', '&quot;', 'Internal Server Error', '&quot;', '')])[7]/following::button[1]</value>
+      <webElementGuid>ed003707-8575-4a84-bde8-7a89ceadfc29</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//span[5]/div/div/button</value>
+      <webElementGuid>fd02cf26-bdca-42ee-983d-7783a8b013d6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'DELETE/api/graphic/{graphic}Eliminar un gráfico por su ID' or . = 'DELETE/api/graphic/{graphic}Eliminar un gráfico por su ID')]</value>
+      <webElementGuid>0a589ea5-446f-4a0e-b326-1dfcc1a805be</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

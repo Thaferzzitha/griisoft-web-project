@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_GETapigraphiclistListar grficos</name>
+   <tag></tag>
+   <elementGuidId>a78d91c5-028f-43bc-aebf-4c88aab57951</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.opblock-summary.opblock-summary-get > button.opblock-summary-control</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='operations-Gráfico-ed0669c802d4b5d05e43013057df672a']/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>e43abc60-669b-435c-8941-fc6ad8f0c536</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-label</name>
+      <type>Main</type>
+      <value>get ​/api​/graphic​/list</value>
+      <webElementGuid>e3db8bd6-a17b-43f8-b3a8-56a2ac7d3437</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-expanded</name>
+      <type>Main</type>
+      <value>false</value>
+      <webElementGuid>6322bc41-c39d-4586-a23e-7e532030492c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>opblock-summary-control</value>
+      <webElementGuid>c26f8016-0b4a-44bf-86a4-b46df7f00608</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>GET/api/graphic/listListar gráficos</value>
+      <webElementGuid>5becd713-a3e7-4089-84e1-1956a1d6565a</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;operations-Gráfico-ed0669c802d4b5d05e43013057df672a&quot;)/div[@class=&quot;opblock-summary opblock-summary-get&quot;]/button[@class=&quot;opblock-summary-control&quot;]</value>
+      <webElementGuid>2a29f452-d520-4877-948a-de584fa0874c</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='operations-Gráfico-ed0669c802d4b5d05e43013057df672a']/div/button</value>
+      <webElementGuid>5918e17f-f4b8-432f-b392-6089f29f842d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Gráfico'])[1]/following::button[2]</value>
+      <webElementGuid>c90afe19-b510-440f-8107-50f4bc47286b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No links'])[8]/following::button[2]</value>
+      <webElementGuid>1799472a-702a-4b1d-ba26-5c7387af374c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//span[2]/div/div/div/span/div/div/button</value>
+      <webElementGuid>6d228d77-896e-47af-a2c7-00809700a0b8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'GET/api/graphic/listListar gráficos' or . = 'GET/api/graphic/listListar gráficos')]</value>
+      <webElementGuid>afade939-0db8-4961-9494-1a685143b472</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

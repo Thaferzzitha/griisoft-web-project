@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Guardar</name>
+   <tag></tag>
+   <elementGuidId>d46e9774-5055-42ca-9a77-718e3b7105f5</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div/main/div/div/div/div/div/div/div[3]/button[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>cadefad6-7ca3-47a5-8e5a-253e853161aa</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150 ml-4</value>
+      <webElementGuid>45bb952b-81c4-4681-b3fa-00c3c9501d77</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Guardar </value>
+      <webElementGuid>f7f3932d-6ca4-4b0c-8eb8-8b2ee339ebd8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/main[1]/div[@class=&quot;py-12&quot;]/div[@class=&quot;max-w-7xl mx-auto sm:px-6 lg:px-8&quot;]/div[@class=&quot;bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg&quot;]/div[@class=&quot;mb-10&quot;]/div[@class=&quot;p-5 card-height w-11/12 mx-auto bg-white dark:bg-gray-500 shadow-md rounded-lg overflow-hidden&quot;]/div[1]/div[@class=&quot;my-10&quot;]/button[@class=&quot;inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150 ml-4&quot;]</value>
+      <webElementGuid>9425acbc-03d3-42e1-9e46-e3de82447f8c</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/main/div/div/div/div/div/div/div[3]/button[2]</value>
+      <webElementGuid>ee8df548-23b0-4e3c-bdf0-84be2733eb3b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Vista YZ'])[1]/following::button[2]</value>
+      <webElementGuid>29cd2dbc-fe25-407f-aa42-9885eddae8f1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Atractor de Rossler Modificado'])[1]/preceding::button[1]</value>
+      <webElementGuid>e9210fd2-4ff1-4bfe-b27d-1becb847a03a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Guardar']/parent::*</value>
+      <webElementGuid>a8d79e53-47e1-40ab-b6c0-830b98a47505</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button[2]</value>
+      <webElementGuid>4c747310-c343-411d-97d1-976fcbca0539</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = ' Guardar ' or . = ' Guardar ')]</value>
+      <webElementGuid>8675f3aa-6694-4acb-8ca6-8e82615d7b87</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Atractor de Rossler'])[2]/preceding::button[1]</value>
+      <webElementGuid>8b4cf5c0-19ae-4a10-9ac0-d5aa7f8f2b35</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

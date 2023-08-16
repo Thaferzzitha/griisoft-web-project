@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_CrearRegenerar token</name>
+   <tag></tag>
+   <elementGuidId>8718342c-f00f-495c-aded-8663bee476e5</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div/main/div/div/div[3]/section/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>85018880-050a-48a1-86ac-ed7bc94c3c82</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150</value>
+      <webElementGuid>7097b3b3-7290-4b8e-a8c0-76ec4168700f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Crear/Regenerar token</value>
+      <webElementGuid>3d04f5b3-c826-4919-a61d-b8197093b812</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/main[1]/div[@class=&quot;py-12&quot;]/div[@class=&quot;max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6&quot;]/div[@class=&quot;p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg&quot;]/section[@class=&quot;space-y-6 max-w-xl&quot;]/button[@class=&quot;inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150&quot;]</value>
+      <webElementGuid>11aca05e-d02f-45c3-bc37-6576ec081643</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/main/div/div/div[3]/section/button</value>
+      <webElementGuid>917fae3c-b668-4ea7-a9fd-b7a04bbda372</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Token de Autenticación'])[1]/following::button[1]</value>
+      <webElementGuid>edb2ce0d-8353-440e-828a-347961e6fe2c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Borrar cuenta'])[1]/preceding::button[1]</value>
+      <webElementGuid>877099c5-e916-4ade-a974-dc77616550c8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Crear/Regenerar token']/parent::*</value>
+      <webElementGuid>1150a7e8-ed26-4ad1-ab18-635154da649b</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//section/button</value>
+      <webElementGuid>6bbb2d20-6070-4254-8230-dc0f369783c3</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'Crear/Regenerar token' or . = 'Crear/Regenerar token')]</value>
+      <webElementGuid>a3697015-8dc3-47c3-9b28-0c2fccf3e95f</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

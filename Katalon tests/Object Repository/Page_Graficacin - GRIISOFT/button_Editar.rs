@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Editar</name>
+   <tag></tag>
+   <elementGuidId>6705baec-52db-40ca-bb30-d5c872d78d96</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div/main/div/div/div/div/table/tbody/tr/td[2]/button[2]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>3f7ade22-34f8-4c14-9f97-c55c8ae7e52f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>my-5 mr-5 bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded</value>
+      <webElementGuid>79c3ef93-d75a-40b1-98bc-a3584769127f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Editar </value>
+      <webElementGuid>02b8029a-fc8e-4aa7-8924-32d3660114c7</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/main[1]/div[@class=&quot;py-12&quot;]/div[@class=&quot;max-w-7xl mx-auto sm:px-6 lg:px-8&quot;]/div[@class=&quot;bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg&quot;]/div[@class=&quot;relative overflow-x-auto&quot;]/table[@class=&quot;w-full text-sm text-left text-gray-500 dark:text-gray-400&quot;]/tbody[1]/tr[@class=&quot;bg-white border-b dark:bg-gray-800 dark:border-gray-700&quot;]/td[@class=&quot;px-6 py-4&quot;]/button[@class=&quot;my-5 mr-5 bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-white py-2 px-4 border border-indigo-500 hover:border-transparent rounded&quot;]</value>
+      <webElementGuid>837e3094-f202-4b7e-86e4-764a7d12212b</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/main/div/div/div/div/table/tbody/tr/td[2]/button[2]</value>
+      <webElementGuid>09fdbab6-8f0d-4e61-813e-882c4a2e8b53</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Ver'])[1]/following::button[1]</value>
+      <webElementGuid>e108e799-7a23-4640-ad2f-bfec29d6db19</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='lunes, 24 de julio de 2023, 23:46'])[1]/following::button[2]</value>
+      <webElementGuid>b8ad721f-0e3d-442b-ade3-b84500d62c5d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Eliminar'])[1]/preceding::button[1]</value>
+      <webElementGuid>ccc0be23-a63e-4595-9302-e6604105c4aa</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Atractor de Rossler'])[3]/preceding::button[2]</value>
+      <webElementGuid>714ca38e-37d7-4db5-9714-ca6d9db6d43f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Editar']/parent::*</value>
+      <webElementGuid>2345b41e-c5df-4d36-91ac-097581234df2</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button[2]</value>
+      <webElementGuid>553fee3c-c652-476e-b333-271e8cb3a06d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = ' Editar ' or . = ' Editar ')]</value>
+      <webElementGuid>bcd68c0f-06af-42b4-8a3c-66d77fd0db93</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_POSTapiauthloginIniciar sesin de usuario</name>
+   <tag></tag>
+   <elementGuidId>7c58e6db-ff35-4080-8203-9e279c1e848a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>#operations-Autenticación-8dcb70df1020986038d098cc08d05dae > div.opblock-summary.opblock-summary-post > button.opblock-summary-control</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='operations-Autenticación-8dcb70df1020986038d098cc08d05dae']/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>8355adaa-8c6b-46b5-960d-f31d3b6532c3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-label</name>
+      <type>Main</type>
+      <value>post ​/api​/auth​/login</value>
+      <webElementGuid>197c61be-ebb2-4aaf-aa76-865c95d58647</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>aria-expanded</name>
+      <type>Main</type>
+      <value>false</value>
+      <webElementGuid>32bb8596-793d-4bf4-b0b2-43cc2edc9867</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>opblock-summary-control</value>
+      <webElementGuid>dd1c569a-9f9b-412b-afef-d2bec144b1ac</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>POST/api/auth/loginIniciar sesión de usuario</value>
+      <webElementGuid>f2021e94-2bf1-4c92-8bc9-32a544a25fc5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;operations-Autenticación-8dcb70df1020986038d098cc08d05dae&quot;)/div[@class=&quot;opblock-summary opblock-summary-post&quot;]/button[@class=&quot;opblock-summary-control&quot;]</value>
+      <webElementGuid>59e59e5c-926a-4f95-aaa0-b78575e09be3</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='operations-Autenticación-8dcb70df1020986038d098cc08d05dae']/div/button</value>
+      <webElementGuid>d3b8818b-7c69-4f3c-a3ff-d09119680a88</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='No links'])[3]/following::button[1]</value>
+      <webElementGuid>38695253-2f8b-40e6-adf2-bc94a49bd36d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('', '&quot;', 'Internal Server Error', '&quot;', '')])[1]/following::button[1]</value>
+      <webElementGuid>0a278f81-92cc-4060-b069-0d1ca067082f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//span[2]/div/div/button</value>
+      <webElementGuid>8c7c1208-aae3-4753-8de0-22fd4f241b9f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'POST/api/auth/loginIniciar sesión de usuario' or . = 'POST/api/auth/loginIniciar sesión de usuario')]</value>
+      <webElementGuid>dff73955-ac96-4ffd-9aa1-24bc12464acd</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

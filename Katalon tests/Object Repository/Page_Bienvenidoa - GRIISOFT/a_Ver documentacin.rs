@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_Ver documentacin</name>
+   <tag></tag>
+   <elementGuidId>70b5658a-66eb-4604-b539-00597f976b61</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div[2]/div[2]/div/div/a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>ecbce2b9-bc28-4696-8a59-51a21c7751b1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/api/documentation</value>
+      <webElementGuid>64aa63d4-b238-43e0-a521-9487202d078f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>text-blue-500 hover:underline</value>
+      <webElementGuid>2ea37b8e-9aef-4d6e-88fc-efceed165b61</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Ver documentación</value>
+      <webElementGuid>32e054d8-afe3-49d3-840d-cbda4a19658c</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[@class=&quot;relative sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white&quot;]/div[@class=&quot;container mx-auto py-8&quot;]/div[@class=&quot;flex flex-wrap justify-center mb-6 mx-auto w-11/12&quot;]/div[@class=&quot;w-full md:w-1/2&quot;]/div[@class=&quot;bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 mb-4 md:mb-0 md:mr-2&quot;]/a[@class=&quot;text-blue-500 hover:underline&quot;]</value>
+      <webElementGuid>5deeae7e-fdee-4ba7-a7d3-4010b4d6357b</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div[2]/div[2]/div/div/a</value>
+      <webElementGuid>0eca7755-6aa9-49cc-b450-c1199458b6da</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'Ver documentación')]</value>
+      <webElementGuid>c462ae04-f893-4d7c-98f2-41fe50bfa135</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Documentación del API de Graficación'])[1]/following::a[1]</value>
+      <webElementGuid>b45bf404-e1e9-4c79-8bef-fde4fd13ef31</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Grafica un atractor!'])[1]/following::a[1]</value>
+      <webElementGuid>69465eb7-858c-4b61-b56b-3906a61acd4a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='GrIISoft'])[1]/preceding::a[1]</value>
+      <webElementGuid>c9a46d93-bc43-4c54-91a2-c0fb1602f902</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Conoce mas aquí'])[1]/preceding::a[1]</value>
+      <webElementGuid>46829420-0a87-4ccd-bf1d-cbdb3106b0c5</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Ver documentación']/parent::*</value>
+      <webElementGuid>179e1ac8-50c3-4339-9a6f-40c55f191320</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/api/documentation')]</value>
+      <webElementGuid>6a979d8e-64d0-468c-b86d-b8cb70d366c7</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/div/a</value>
+      <webElementGuid>92de3862-c061-4fac-96af-79444ca2f341</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/api/documentation' and (text() = 'Ver documentación' or . = 'Ver documentación')]</value>
+      <webElementGuid>42682e51-f385-4a78-8e4a-4f5d89691310</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

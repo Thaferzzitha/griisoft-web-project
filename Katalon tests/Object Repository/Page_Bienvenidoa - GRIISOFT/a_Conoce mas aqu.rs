@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>a_Conoce mas aqu</name>
+   <tag></tag>
+   <elementGuidId>b9f89298-a399-41f1-bcb1-5a65af882ad2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div[2]/div[2]/div[2]/div/a</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>0cdab469-1824-48e4-b239-28dfcf330171</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>/griisoft</value>
+      <webElementGuid>04b50cd8-7d42-4e8e-9261-0618dc0b227f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>text-blue-500 hover:underline</value>
+      <webElementGuid>d302548e-238d-42ab-8abb-ba34ff74ece7</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Conoce mas aquí</value>
+      <webElementGuid>2966b1bf-4fe9-492a-bfa2-05b67d9063f6</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[@class=&quot;relative sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white&quot;]/div[@class=&quot;container mx-auto py-8&quot;]/div[@class=&quot;flex flex-wrap justify-center mb-6 mx-auto w-11/12&quot;]/div[@class=&quot;w-full md:w-1/2&quot;]/div[@class=&quot;bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 md:ml-2&quot;]/a[@class=&quot;text-blue-500 hover:underline&quot;]</value>
+      <webElementGuid>720841e9-1aa3-4ca7-b014-24c3b05605c6</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div[2]/div[2]/div[2]/div/a</value>
+      <webElementGuid>287ad805-e26b-4a54-a154-397fa497a1b0</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:link</name>
+      <type>Main</type>
+      <value>//a[contains(text(),'Conoce mas aquí')]</value>
+      <webElementGuid>9bf5ce98-27d3-4ecd-a3d8-dcc3b7a14f43</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='GrIISoft'])[1]/following::a[1]</value>
+      <webElementGuid>7d9bf2c9-8b80-405b-9804-74d9615c1c94</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Ver documentación'])[1]/following::a[1]</value>
+      <webElementGuid>131a3fa0-083b-41c7-b969-ca1cab0dcee9</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Conoce mas aquí']/parent::*</value>
+      <webElementGuid>26c20b24-572f-4a12-9121-b5c9ffc3ca7d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:href</name>
+      <type>Main</type>
+      <value>//a[contains(@href, '/griisoft')]</value>
+      <webElementGuid>6c463500-0a39-4247-a5af-d037c3c6d9c4</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div/a</value>
+      <webElementGuid>5c94302c-3303-4a63-aa7f-bba98ee16c74</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//a[@href = '/griisoft' and (text() = 'Conoce mas aquí' or . = 'Conoce mas aquí')]</value>
+      <webElementGuid>f638f816-f561-4e32-97c3-9f5453f8174c</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

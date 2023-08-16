@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>El usuario registrado podrá actualizar su información del perfil.</description>
+   <name>Actualizar Información del Perfil</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b377db9f-00aa-42d1-8e17-0d780f1325ae</testCaseGuid>
+</TestCaseEntity>

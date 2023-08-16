@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Ver</name>
+   <tag></tag>
+   <elementGuidId>81563d42-2420-42e3-a318-1959485bf29a</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div/main/div/div/div/div/table/tbody/tr/td[2]/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>3c8f2269-482a-4a88-b522-7a7ae5e69cb5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>my-5 mr-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded</value>
+      <webElementGuid>d862cffa-07d3-427d-82df-136f9a763833</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Ver </value>
+      <webElementGuid>11db714b-469c-4053-af72-bb56700c8ea2</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/main[1]/div[@class=&quot;py-12&quot;]/div[@class=&quot;max-w-7xl mx-auto sm:px-6 lg:px-8&quot;]/div[@class=&quot;bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg&quot;]/div[@class=&quot;relative overflow-x-auto&quot;]/table[@class=&quot;w-full text-sm text-left text-gray-500 dark:text-gray-400&quot;]/tbody[1]/tr[@class=&quot;bg-white border-b dark:bg-gray-800 dark:border-gray-700&quot;]/td[@class=&quot;px-6 py-4&quot;]/button[@class=&quot;my-5 mr-5 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded&quot;]</value>
+      <webElementGuid>e79fe814-9d84-427e-bf3a-a602e7f5dddb</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/main/div/div/div/div/table/tbody/tr/td[2]/button</value>
+      <webElementGuid>7752aad7-e434-4045-8e48-07a11f766777</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='lunes, 24 de julio de 2023, 23:56'])[1]/following::button[1]</value>
+      <webElementGuid>4539442a-2989-4eca-afa1-3908df2097b1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='rossler'])[1]/following::button[1]</value>
+      <webElementGuid>c307356b-7d34-4ecf-831a-86deb1b12bd8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Editar'])[1]/preceding::button[1]</value>
+      <webElementGuid>e3eb904c-7dcb-4755-ad5f-645f301bb9ef</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Eliminar'])[1]/preceding::button[2]</value>
+      <webElementGuid>07573a6e-7014-4f95-a87f-cf0730b374de</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Ver']/parent::*</value>
+      <webElementGuid>4d715544-1d6c-4fdb-b3c1-51e3d1b57c60</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//td[2]/button</value>
+      <webElementGuid>6f2f1940-2408-485d-8c94-f2b4fd9d45dc</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = ' Ver ' or . = ' Ver ')]</value>
+      <webElementGuid>15ad94a8-e8e6-46d0-8e45-bd100343eb30</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='lunes, 24 de julio de 2023, 23:46'])[1]/following::button[1]</value>
+      <webElementGuid>9f7faf63-140e-4a32-a76a-3dbd6c3bfa76</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

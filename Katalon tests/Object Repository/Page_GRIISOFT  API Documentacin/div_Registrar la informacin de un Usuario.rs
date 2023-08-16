@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_Registrar la informacin de un Usuario</name>
+   <tag></tag>
+   <elementGuidId>b878cbcb-36b7-4f58-996f-75b38189c506</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>div.opblock-summary-description</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='operations-Autenticación-d764dd091cc4494ae0baf360b03319f3']/div/button/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>d4c4fe93-56ad-4221-8581-45048c6216fe</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>opblock-summary-description</value>
+      <webElementGuid>a9427bd0-2a61-4b65-9516-91043e507ba9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Registrar la información de un Usuario</value>
+      <webElementGuid>ca75c6a1-73b9-44b0-b7e3-fca564c3da15</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;operations-Autenticación-d764dd091cc4494ae0baf360b03319f3&quot;)/div[@class=&quot;opblock-summary opblock-summary-post&quot;]/button[@class=&quot;opblock-summary-control&quot;]/div[@class=&quot;opblock-summary-description&quot;]</value>
+      <webElementGuid>04111e59-d362-4722-9d85-c449de5c14bf</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='operations-Autenticación-d764dd091cc4494ae0baf360b03319f3']/div/button/div</value>
+      <webElementGuid>9b3bfc28-c7c6-4047-ba91-e559ff082c4a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='/api/auth/register'])[1]/following::div[1]</value>
+      <webElementGuid>5198a0cc-65a8-4890-a406-d771b177a3fa</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='POST'])[1]/following::div[1]</value>
+      <webElementGuid>58a76578-027b-481d-a914-2f38e218589a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='POST'])[2]/preceding::div[2]</value>
+      <webElementGuid>820657f1-6ce6-4e70-9182-fad3abeb2e09</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='/api/auth/login'])[1]/preceding::div[2]</value>
+      <webElementGuid>21d4cba8-9f13-4e9d-a21e-7584f9d49dab</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Registrar la información de un Usuario']/parent::*</value>
+      <webElementGuid>e9e14777-e8d3-487e-8bc3-bb6d82c98b2a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button/div</value>
+      <webElementGuid>9d56c4ce-73c9-4af5-bc97-bd8099c5633d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//div[(text() = 'Registrar la información de un Usuario' or . = 'Registrar la información de un Usuario')]</value>
+      <webElementGuid>9e2744c1-c9b7-47b5-9ae8-618c4b94a37a</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

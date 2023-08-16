@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Cerrar Sesin</name>
+   <tag></tag>
+   <elementGuidId>fc7de1c0-437d-47c8-9b3b-8376a6bc4f12</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='app']/div/div/nav/div/div/div[2]/div/div/div[3]/div/button</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>ed661e74-827a-4b2d-acd1-7da6179c6124</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out</value>
+      <webElementGuid>f74a22a9-5168-44b3-940e-c6746b1c86ed</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value> Cerrar Sesión </value>
+      <webElementGuid>9fbc5870-61d2-4a21-91bd-4e1b51839c3b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;app&quot;)/div[1]/div[@class=&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;]/nav[@class=&quot;bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700&quot;]/div[@class=&quot;max-w-7xl mx-auto px-4 sm:px-6 lg:px-8&quot;]/div[@class=&quot;flex justify-between h-16&quot;]/div[@class=&quot;hidden sm:flex sm:items-center sm:ml-6&quot;]/div[@class=&quot;ml-3 relative&quot;]/div[@class=&quot;relative&quot;]/div[@class=&quot;absolute z-50 mt-2 rounded-md shadow-lg w-48 origin-top-right right-0&quot;]/div[@class=&quot;rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white dark:bg-gray-700&quot;]/button[@class=&quot;block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out&quot;]</value>
+      <webElementGuid>fdc9bcf5-53ff-461a-a5b4-9557b7ae7dce</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='app']/div/div/nav/div/div/div[2]/div/div/div[3]/div/button</value>
+      <webElementGuid>152b43b2-b491-4a2b-99e4-1aa66fc3fec3</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Thalía Fernanda Zárate'])[1]/following::button[1]</value>
+      <webElementGuid>d5096475-e133-4119-b830-e13a297efead</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Cerrar Sesión']/parent::*</value>
+      <webElementGuid>3314fcea-a759-46cb-b4bd-79ef29872046</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/button</value>
+      <webElementGuid>f2f00142-cca8-4160-8087-83bc73ff6f7c</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = ' Cerrar Sesión ' or . = ' Cerrar Sesión ')]</value>
+      <webElementGuid>2d5a7256-59f9-41bf-8108-10e3fb0b7257</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
