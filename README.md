@@ -14,7 +14,9 @@ Este repositorio contiene el código fuente del proyecto web de la Aplicación w
    ```bash
    cp .env.example .env
 
-3. Asegúrate de tener Docker Desktop ejecutándose (en Windows).
+3. Asegúrate de tener Docker Desktop ejecutándose (en Windows) o verificar que docker este instalado (Linux) con el siguiente comando.
+    ```bash
+   docker -v
 4. Ejecuta el siguiente comando para instalar las dependencias de PHP utilizando Composer:
    ```bash
    docker run --rm \
@@ -28,22 +30,16 @@ Este repositorio contiene el código fuente del proyecto web de la Aplicación w
    alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 6. Levanta los contenedores de Docker:
    ```bash
-   sail up
-7. Instala las migraciones y configuraciones necesarias:
-    ```bash
-    sail artisan sail:install
-8. Genera una clave de aplicación:
+   sail up -d
+7. Genera una clave de aplicación:
     ```bash
     sail artisan key:generate
+8. Instala las migraciones, y pobla la base de datos:
+    ```bash
+    sail artisan migrate --seed
 9. Instala las dependencias de Node.js:
     ```bash
     sail npm install
-10. Compila los activos de frontend:
-    ```bash
-    sail npm run dev
-11. Crea y llena las tablas en la base de datos:
-    ```bash
-    sail artisan migrate --seed
 
 ## Configuración
 
@@ -69,7 +65,7 @@ Este repositorio contiene el código fuente del proyecto web de la Aplicación w
    alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 3. Levanta los contenedores de Docker:
    ```bash
-   sail up
+   sail up -d
 5. Compila los activos de frontend:
    ```bash
    sail npm run dev
