@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "production": "vite",
+        "production": "vite build",
         "build": "vue-tsc && vite build && vite build --ssr"
     },
     "devDependencies": {
