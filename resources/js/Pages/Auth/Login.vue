@@ -17,21 +17,28 @@ const form = useForm({
     email: '',
     password: '',
     remember: false,
+    errorMessage: '',
 });
 
 const submit = async () => {
-    const response = await axios.post('/api/auth/login', {
-        email: form.email,
-        password: form.password
-    });
+    try {
+        const response = await axios.post('/api/auth/login', {
+            email: form.email,
+            password: form.password
+        });
+        
+        const token = response.data.token;
     
-    const token = response.data.token;
-
-    localStorage.setItem('access_token', token);
-    
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
-    });
+        localStorage.setItem('access_token', token);
+        
+        form.post(route('login'), {
+            onFinish: () => form.reset('password'),
+        });
+    } catch (error) {
+        if (error.response && error.response.data && error.response.data.message) {
+            form.errors.errorMessage = error.response.data.message;
+        }
+    }
 };
 </script>
 
@@ -63,8 +70,6 @@ const submit = async () => {
                     autofocus
                     autocomplete="username"
                 />
-
-                <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
@@ -79,7 +84,7 @@ const submit = async () => {
                     autocomplete="current-password"
                 />
 
-                <InputError class="mt-2" :message="form.errors.password" />
+                <InputError class="mt-2" :message="form.errors.errorMessage" />
             </div>
 
             <div class="block mt-4">
